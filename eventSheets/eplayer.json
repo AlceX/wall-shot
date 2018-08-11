@@ -1,0 +1,230 @@
+{
+	"name": "ePlayer",
+	"events": [
+		{
+			"eventType": "group",
+			"disabled": false,
+			"title": "ePlayer/Input",
+			"description": "",
+			"isActiveOnStart": true,
+			"children": [
+				{
+					"eventType": "block",
+					"conditions": [
+						{
+							"id": "key-is-down",
+							"objectClass": "Keyboard",
+							"sid": 998131848318953,
+							"parameters": {
+								"key": 87
+							}
+						}
+					],
+					"actions": [
+						{
+							"id": "send-event",
+							"objectClass": "EventTrigger",
+							"sid": 739729433390446,
+							"parameters": {
+								"event-name": "\"moving_up\"",
+								"event-message": "0",
+								"event-messages-additional": []
+							}
+						}
+					],
+					"sid": 623014514698096
+				},
+				{
+					"eventType": "block",
+					"conditions": [
+						{
+							"id": "key-is-down",
+							"objectClass": "Keyboard",
+							"sid": 809393370397349,
+							"parameters": {
+								"key": 65
+							}
+						}
+					],
+					"actions": [
+						{
+							"id": "send-event",
+							"objectClass": "EventTrigger",
+							"sid": 400850975117906,
+							"parameters": {
+								"event-name": "\"moving_left\"",
+								"event-message": "0",
+								"event-messages-additional": []
+							}
+						}
+					],
+					"sid": 122685072845967
+				},
+				{
+					"eventType": "block",
+					"conditions": [
+						{
+							"id": "key-is-down",
+							"objectClass": "Keyboard",
+							"sid": 555679877441779,
+							"parameters": {
+								"key": 83
+							}
+						}
+					],
+					"actions": [
+						{
+							"id": "send-event",
+							"objectClass": "EventTrigger",
+							"sid": 727344465588739,
+							"parameters": {
+								"event-name": "\"moving_down\"",
+								"event-message": "0",
+								"event-messages-additional": []
+							}
+						}
+					],
+					"sid": 835608403362641
+				},
+				{
+					"eventType": "block",
+					"conditions": [
+						{
+							"id": "key-is-down",
+							"objectClass": "Keyboard",
+							"sid": 400069663136817,
+							"parameters": {
+								"key": 68
+							}
+						}
+					],
+					"actions": [
+						{
+							"id": "send-event",
+							"objectClass": "EventTrigger",
+							"sid": 813619209061708,
+							"parameters": {
+								"event-name": "\"moving_right\"",
+								"event-message": "0",
+								"event-messages-additional": []
+							}
+						}
+					],
+					"sid": 448779490882666
+				}
+			],
+			"sid": 410123507614538
+		},
+		{
+			"eventType": "group",
+			"disabled": false,
+			"title": "ePlayer/Movement",
+			"description": "",
+			"isActiveOnStart": true,
+			"children": [
+				{
+					"eventType": "block",
+					"conditions": [
+						{
+							"id": "event-triggered",
+							"objectClass": "EventTrigger",
+							"sid": 550972703595180,
+							"parameters": {
+								"event-respond-to": "\"moving_up\""
+							}
+						}
+					],
+					"actions": [
+						{
+							"id": "simulate-control",
+							"objectClass": "spr_player",
+							"sid": 176312257828281,
+							"behaviorType": "8Direction",
+							"parameters": {
+								"control": "up"
+							}
+						}
+					],
+					"sid": 583081548513222
+				},
+				{
+					"eventType": "block",
+					"conditions": [
+						{
+							"id": "event-triggered",
+							"objectClass": "EventTrigger",
+							"sid": 880173580674621,
+							"parameters": {
+								"event-respond-to": "\"moving_left\""
+							}
+						}
+					],
+					"actions": [
+						{
+							"id": "simulate-control",
+							"objectClass": "spr_player",
+							"sid": 544953995577675,
+							"behaviorType": "8Direction",
+							"parameters": {
+								"control": "left"
+							}
+						}
+					],
+					"sid": 939153965287425
+				},
+				{
+					"eventType": "block",
+					"conditions": [
+						{
+							"id": "event-triggered",
+							"objectClass": "EventTrigger",
+							"sid": 725628506378753,
+							"parameters": {
+								"event-respond-to": "\"moving_down\""
+							}
+						}
+					],
+					"actions": [
+						{
+							"id": "simulate-control",
+							"objectClass": "spr_player",
+							"sid": 864309589748069,
+							"behaviorType": "8Direction",
+							"parameters": {
+								"control": "down"
+							}
+						}
+					],
+					"sid": 521279615470283
+				},
+				{
+					"eventType": "block",
+					"conditions": [
+						{
+							"id": "event-triggered",
+							"objectClass": "EventTrigger",
+							"sid": 336146937037125,
+							"parameters": {
+								"event-respond-to": "\"moving_right\""
+							}
+						}
+					],
+					"actions": [
+						{
+							"id": "simulate-control",
+							"objectClass": "spr_player",
+							"sid": 323461077309823,
+							"behaviorType": "8Direction",
+							"parameters": {
+								"control": "right"
+							}
+						}
+					],
+					"sid": 731132063742223
+				}
+			],
+			"sid": 431708990504645
+		}
+	],
+	"sid": 177573190643701
+}

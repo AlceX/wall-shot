@@ -5,11 +5,55 @@
 	"runtime": "c2",
 	"useWorker": false,
 	"bundleAddons": false,
-	"usedAddons": [],
+	"usedAddons": [
+		{
+			"type": "plugin",
+			"id": "RGBZ_EventTrigger",
+			"name": "Event Trigger",
+			"author": "rhg1968",
+			"version": "1.3.0",
+			"bundled": false
+		},
+		{
+			"type": "plugin",
+			"id": "Keyboard",
+			"name": "Keyboard",
+			"author": "Scirra",
+			"version": "r111",
+			"bundled": false
+		},
+		{
+			"type": "plugin",
+			"id": "Sprite",
+			"name": "Sprite",
+			"author": "Scirra",
+			"version": "r111",
+			"bundled": false
+		},
+		{
+			"type": "behavior",
+			"id": "EightDir",
+			"name": "8 Direction",
+			"author": "Scirra",
+			"version": "r111",
+			"bundled": false
+		}
+	],
 	"uniqueId": "n9d856u12yp",
 	"objectTypes": {
-		"items": [],
-		"subfolders": []
+		"items": [
+			"spr_player"
+		],
+		"subfolders": [
+			{
+				"items": [
+					"EventTrigger",
+					"Keyboard"
+				],
+				"subfolders": [],
+				"name": "System"
+			}
+		]
 	},
 	"autosaveData": null,
 	"containers": [],
@@ -19,15 +63,23 @@
 	},
 	"layouts": {
 		"items": [
-			"Layout 1"
+			"Level"
 		],
 		"subfolders": []
 	},
 	"eventSheets": {
 		"items": [
-			"Event sheet 1"
+			"ePlayer"
 		],
-		"subfolders": []
+		"subfolders": [
+			{
+				"items": [
+					"elLevel"
+				],
+				"subfolders": [],
+				"name": "Layouts"
+			}
+		]
 	},
 	"rootFileFolders": {
 		"sound": {

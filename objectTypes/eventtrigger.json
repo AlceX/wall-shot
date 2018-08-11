@@ -1,0 +1,10 @@
+{
+	"name": "EventTrigger",
+	"plugin-id": "RGBZ_EventTrigger",
+	"sid": 515877108362112,
+	"singleglobal-inst": {
+		"type": "EventTrigger",
+		"properties": {},
+		"uid": 3
+	}
+}
