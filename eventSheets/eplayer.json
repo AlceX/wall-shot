@@ -224,6 +224,38 @@
 				}
 			],
 			"sid": 431708990504645
+		},
+		{
+			"eventType": "group",
+			"disabled": false,
+			"title": "ePlayer/Camera",
+			"description": "",
+			"isActiveOnStart": true,
+			"children": [
+				{
+					"eventType": "block",
+					"conditions": [
+						{
+							"id": "every-tick",
+							"objectClass": "System",
+							"sid": 746690337861911
+						}
+					],
+					"actions": [
+						{
+							"id": "set-position",
+							"objectClass": "obj_camera",
+							"sid": 980070001247140,
+							"parameters": {
+								"x": "lerp(spr_player.X, Mouse.X, 0.25)",
+								"y": "lerp(spr_player.Y, Mouse.Y, 0.25)"
+							}
+						}
+					],
+					"sid": 388065454807342
+				}
+			],
+			"sid": 568479796440330
 		}
 	],
 	"sid": 177573190643701

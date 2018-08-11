@@ -24,6 +24,14 @@
 		},
 		{
 			"type": "plugin",
+			"id": "Mouse",
+			"name": "Mouse",
+			"author": "Scirra",
+			"version": "r111",
+			"bundled": false
+		},
+		{
+			"type": "plugin",
 			"id": "Sprite",
 			"name": "Sprite",
 			"author": "Scirra",
@@ -37,18 +45,28 @@
 			"author": "Scirra",
 			"version": "r111",
 			"bundled": false
+		},
+		{
+			"type": "behavior",
+			"id": "scrollto",
+			"name": "Scroll To",
+			"author": "Scirra",
+			"version": "r111",
+			"bundled": false
 		}
 	],
 	"uniqueId": "n9d856u12yp",
 	"objectTypes": {
 		"items": [
-			"spr_player"
+			"spr_player",
+			"obj_camera"
 		],
 		"subfolders": [
 			{
 				"items": [
 					"EventTrigger",
-					"Keyboard"
+					"Keyboard",
+					"Mouse"
 				],
 				"subfolders": [],
 				"name": "System"
