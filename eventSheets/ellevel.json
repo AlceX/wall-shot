@@ -4,6 +4,10 @@
 		{
 			"eventType": "include",
 			"includeSheet": "ePlayer"
+		},
+		{
+			"eventType": "include",
+			"includeSheet": "eEnemies"
 		}
 	],
 	"sid": 113748176136503

@@ -32,8 +32,32 @@
 		},
 		{
 			"type": "plugin",
+			"id": "Tilemap",
+			"name": "Tilemap",
+			"author": "Scirra",
+			"version": "r111",
+			"bundled": false
+		},
+		{
+			"type": "plugin",
 			"id": "Sprite",
 			"name": "Sprite",
+			"author": "Scirra",
+			"version": "r111",
+			"bundled": false
+		},
+		{
+			"type": "behavior",
+			"id": "solid",
+			"name": "Solid",
+			"author": "Scirra",
+			"version": "r111",
+			"bundled": false
+		},
+		{
+			"type": "behavior",
+			"id": "scrollto",
+			"name": "Scroll To",
 			"author": "Scirra",
 			"version": "r111",
 			"bundled": false
@@ -48,8 +72,16 @@
 		},
 		{
 			"type": "behavior",
-			"id": "scrollto",
-			"name": "Scroll To",
+			"id": "Bullet",
+			"name": "Bullet",
+			"author": "Scirra",
+			"version": "r111",
+			"bundled": false
+		},
+		{
+			"type": "behavior",
+			"id": "destroy",
+			"name": "Destroy outside layout",
 			"author": "Scirra",
 			"version": "r111",
 			"bundled": false
@@ -58,8 +90,7 @@
 	"uniqueId": "n9d856u12yp",
 	"objectTypes": {
 		"items": [
-			"spr_player",
-			"obj_camera"
+			"spr_enemy"
 		],
 		"subfolders": [
 			{
@@ -70,6 +101,22 @@
 				],
 				"subfolders": [],
 				"name": "System"
+			},
+			{
+				"items": [
+					"tm_collisions"
+				],
+				"subfolders": [],
+				"name": "Background"
+			},
+			{
+				"items": [
+					"obj_camera",
+					"spr_player",
+					"spr_bullet_wall"
+				],
+				"subfolders": [],
+				"name": "Player"
 			}
 		]
 	},
@@ -87,7 +134,8 @@
 	},
 	"eventSheets": {
 		"items": [
-			"ePlayer"
+			"ePlayer",
+			"eEnemies"
 		],
 		"subfolders": [
 			{

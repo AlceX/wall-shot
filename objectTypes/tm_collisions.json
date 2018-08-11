@@ -1,0 +1,38 @@
+{
+	"name": "tm_collisions",
+	"plugin-id": "Tilemap",
+	"sid": 100048160235747,
+	"isGlobal": false,
+	"instanceVariables": [],
+	"behaviorTypes": [
+		{
+			"behaviorId": "solid",
+			"name": "Solid",
+			"sid": 856066843158138
+		}
+	],
+	"effectTypes": [],
+	"image": {
+		"width": 32,
+		"height": 32,
+		"originX": 0.5,
+		"originY": 0.5,
+		"originalSource": "",
+		"exportFormat": "png",
+		"exportQuality": 0.8,
+		"imageSpriteId": 5,
+		"collisionPoly": {
+			"points": [
+				0.01020408163265306,
+				0.005154639175257732,
+				0.9897959183673469,
+				0.005154639175257732,
+				0.9897959183673469,
+				0.9948453608247423,
+				0.01020408163265306,
+				0.9948453608247423
+			]
+		}
+	},
+	"tile-collision-polys": {}
+}

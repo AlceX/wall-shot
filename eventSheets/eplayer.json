@@ -111,6 +111,110 @@
 						}
 					],
 					"sid": 448779490882666
+				},
+				{
+					"eventType": "block",
+					"conditions": [
+						{
+							"id": "on-key-pressed",
+							"objectClass": "Keyboard",
+							"sid": 964565184534731,
+							"parameters": {
+								"key": 38
+							}
+						}
+					],
+					"actions": [
+						{
+							"id": "send-event",
+							"objectClass": "EventTrigger",
+							"sid": 700886466277826,
+							"parameters": {
+								"event-name": "\"shoot\"",
+								"event-message": "\"up\"",
+								"event-messages-additional": []
+							}
+						}
+					],
+					"sid": 285873201206913
+				},
+				{
+					"eventType": "block",
+					"conditions": [
+						{
+							"id": "on-key-pressed",
+							"objectClass": "Keyboard",
+							"sid": 893801337015042,
+							"parameters": {
+								"key": 37
+							}
+						}
+					],
+					"actions": [
+						{
+							"id": "send-event",
+							"objectClass": "EventTrigger",
+							"sid": 491529163676095,
+							"parameters": {
+								"event-name": "\"shoot\"",
+								"event-message": "\"left\"",
+								"event-messages-additional": []
+							}
+						}
+					],
+					"sid": 191535257770643
+				},
+				{
+					"eventType": "block",
+					"conditions": [
+						{
+							"id": "on-key-pressed",
+							"objectClass": "Keyboard",
+							"sid": 761914886683317,
+							"parameters": {
+								"key": 40
+							}
+						}
+					],
+					"actions": [
+						{
+							"id": "send-event",
+							"objectClass": "EventTrigger",
+							"sid": 145755151040741,
+							"parameters": {
+								"event-name": "\"shoot\"",
+								"event-message": "\"down\"",
+								"event-messages-additional": []
+							}
+						}
+					],
+					"sid": 467374391777992
+				},
+				{
+					"eventType": "block",
+					"conditions": [
+						{
+							"id": "on-key-pressed",
+							"objectClass": "Keyboard",
+							"sid": 234462502372245,
+							"parameters": {
+								"key": 39
+							}
+						}
+					],
+					"actions": [
+						{
+							"id": "send-event",
+							"objectClass": "EventTrigger",
+							"sid": 274322227400145,
+							"parameters": {
+								"event-name": "\"shoot\"",
+								"event-message": "\"right\"",
+								"event-messages-additional": []
+							}
+						}
+					],
+					"sid": 216526827279718
 				}
 			],
 			"sid": 410123507614538
@@ -118,7 +222,7 @@
 		{
 			"eventType": "group",
 			"disabled": false,
-			"title": "ePlayer/Movement",
+			"title": "ePlayer/Gameplay",
 			"description": "",
 			"isActiveOnStart": true,
 			"children": [
@@ -221,6 +325,227 @@
 						}
 					],
 					"sid": 731132063742223
+				},
+				{
+					"eventType": "block",
+					"conditions": [
+						{
+							"id": "event-triggered",
+							"objectClass": "EventTrigger",
+							"sid": 369204671534246,
+							"parameters": {
+								"event-respond-to": "\"shoot\""
+							}
+						}
+					],
+					"actions": [],
+					"sid": 734453713535046,
+					"children": [
+						{
+							"eventType": "variable",
+							"name": "direction",
+							"type": "number",
+							"initialValue": "0",
+							"comment": "",
+							"isStatic": false,
+							"isConstant": false,
+							"sid": 441399339906469
+						},
+						{
+							"eventType": "block",
+							"conditions": [
+								{
+									"id": "compare-two-values",
+									"objectClass": "System",
+									"sid": 408082157645851,
+									"parameters": {
+										"first-value": "EventTrigger.GetEventMessageAt(0)",
+										"comparison": 0,
+										"second-value": "\"up\""
+									}
+								}
+							],
+							"actions": [
+								{
+									"id": "set-eventvar-value",
+									"objectClass": "System",
+									"sid": 783577696706172,
+									"parameters": {
+										"variable": "direction",
+										"value": "270"
+									}
+								}
+							],
+							"sid": 258892038977350
+						},
+						{
+							"eventType": "block",
+							"conditions": [
+								{
+									"id": "compare-two-values",
+									"objectClass": "System",
+									"sid": 496161511128578,
+									"parameters": {
+										"first-value": "EventTrigger.GetEventMessageAt(0)",
+										"comparison": 0,
+										"second-value": "\"left\""
+									}
+								}
+							],
+							"actions": [
+								{
+									"id": "set-eventvar-value",
+									"objectClass": "System",
+									"sid": 975279035982118,
+									"parameters": {
+										"variable": "direction",
+										"value": "180"
+									}
+								}
+							],
+							"sid": 370146158351648
+						},
+						{
+							"eventType": "block",
+							"conditions": [
+								{
+									"id": "compare-two-values",
+									"objectClass": "System",
+									"sid": 626293049276378,
+									"parameters": {
+										"first-value": "EventTrigger.GetEventMessageAt(0)",
+										"comparison": 0,
+										"second-value": "\"down\""
+									}
+								}
+							],
+							"actions": [
+								{
+									"id": "set-eventvar-value",
+									"objectClass": "System",
+									"sid": 344169388643428,
+									"parameters": {
+										"variable": "direction",
+										"value": "90"
+									}
+								}
+							],
+							"sid": 351009565559773
+						},
+						{
+							"eventType": "block",
+							"conditions": [
+								{
+									"id": "compare-two-values",
+									"objectClass": "System",
+									"sid": 648355232166100,
+									"parameters": {
+										"first-value": "EventTrigger.GetEventMessageAt(0)",
+										"comparison": 0,
+										"second-value": "\"right\""
+									}
+								}
+							],
+							"actions": [
+								{
+									"id": "set-eventvar-value",
+									"objectClass": "System",
+									"sid": 700877193154255,
+									"parameters": {
+										"variable": "direction",
+										"value": "0"
+									}
+								}
+							],
+							"sid": 440216123584712
+						},
+						{
+							"eventType": "block",
+							"conditions": [],
+							"actions": [
+								{
+									"id": "spawn-another-object",
+									"objectClass": "spr_player",
+									"sid": 246462903626947,
+									"parameters": {
+										"object": "spr_bullet_wall",
+										"layer": "\"objects\"",
+										"image-point": "0"
+									}
+								},
+								{
+									"id": "set-angle-of-motion",
+									"objectClass": "spr_bullet_wall",
+									"sid": 675919856247444,
+									"behaviorType": "Bullet",
+									"parameters": {
+										"angle": "direction"
+									}
+								}
+							],
+							"sid": 396816241997028
+						}
+					]
+				},
+				{
+					"eventType": "block",
+					"conditions": [
+						{
+							"id": "is-overlapping-another-object",
+							"objectClass": "spr_bullet_wall",
+							"sid": 438150491718802,
+							"parameters": {
+								"object": "spr_player"
+							},
+							"isInverted": true
+						}
+					],
+					"actions": [
+						{
+							"id": "set-enabled",
+							"objectClass": "spr_bullet_wall",
+							"sid": 684702790700456,
+							"behaviorType": "Solid",
+							"parameters": {
+								"state": "enabled"
+							}
+						}
+					],
+					"sid": 465741184688661
+				},
+				{
+					"eventType": "block",
+					"conditions": [
+						{
+							"id": "on-collision-with-another-object",
+							"objectClass": "spr_bullet_wall",
+							"sid": 857079446367242,
+							"parameters": {
+								"object": "tm_collisions"
+							}
+						},
+						{
+							"id": "on-collision-with-another-object",
+							"objectClass": "spr_bullet_wall",
+							"sid": 760642186764329,
+							"parameters": {
+								"object": "spr_bullet_wall"
+							}
+						}
+					],
+					"actions": [
+						{
+							"id": "set-enabled",
+							"objectClass": "spr_bullet_wall",
+							"sid": 908815045527190,
+							"behaviorType": "Bullet",
+							"parameters": {
+								"state": "disabled"
+							}
+						}
+					],
+					"sid": 770916151249777,
+					"isOrBlock": true
 				}
 			],
 			"sid": 431708990504645
@@ -245,10 +570,10 @@
 						{
 							"id": "set-position",
 							"objectClass": "obj_camera",
-							"sid": 980070001247140,
+							"sid": 487597461787102,
 							"parameters": {
-								"x": "lerp(spr_player.X, Mouse.X, 0.25)",
-								"y": "lerp(spr_player.Y, Mouse.Y, 0.25)"
+								"x": "lerp(Self.X, spr_player.X + spr_player.8Direction.VectorX / 5, 0.5)",
+								"y": "lerp(Self.Y, spr_player.Y + spr_player.8Direction.VectorY / 5, 0.5)"
 							}
 						}
 					],

@@ -1,0 +1,69 @@
+{
+	"name": "eEnemies",
+	"events": [
+		{
+			"eventType": "block",
+			"conditions": [
+				{
+					"id": "is-overlapping-another-object",
+					"objectClass": "spr_enemy",
+					"sid": 153203545799842,
+					"parameters": {
+						"object": "spr_bullet_wall"
+					}
+				}
+			],
+			"actions": [
+				{
+					"id": "set-angle-of-motion",
+					"objectClass": "spr_enemy",
+					"sid": 487482389916751,
+					"behaviorType": "Bullet",
+					"parameters": {
+						"angle": "spr_bullet_wall.Bullet.AngleOfMotion"
+					}
+				},
+				{
+					"id": "set-speed",
+					"objectClass": "spr_enemy",
+					"sid": 241207540327301,
+					"behaviorType": "Bullet",
+					"parameters": {
+						"speed": "spr_bullet_wall.Bullet.Speed"
+					}
+				}
+			],
+			"sid": 495303384500143
+		},
+		{
+			"eventType": "block",
+			"conditions": [
+				{
+					"id": "is-overlapping-another-object",
+					"objectClass": "spr_enemy",
+					"sid": 129725507392439,
+					"parameters": {
+						"object": "spr_bullet_wall"
+					}
+				},
+				{
+					"id": "is-overlapping-another-object",
+					"objectClass": "spr_enemy",
+					"sid": 850258046797200,
+					"parameters": {
+						"object": "tm_collisions"
+					}
+				}
+			],
+			"actions": [
+				{
+					"id": "destroy",
+					"objectClass": "spr_enemy",
+					"sid": 513551832145732
+				}
+			],
+			"sid": 848703821864529
+		}
+	],
+	"sid": 249455583558953
+}
