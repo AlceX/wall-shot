@@ -34,7 +34,7 @@
 							"height": 30,
 							"max-width": 40,
 							"max-height": 30,
-							"data": "16x1,14x0,16x1,14x0,2x1,28x0,2x1,28x0,2x1,28x0,2x1,28x0,2x1,28x0,2x1,13x0,5x1,10x0,2x1,13x0,5x1,10x0,2x1,13x0,5x1,10x0,2x1,28x0,2x1,28x0,2x1,5x0,3x1,20x0,2x1,5x0,3x1,20x0,2x1,5x0,3x1,20x0,2x1,5x0,3x1,20x0,2x1,5x0,3x1,20x0,2x1,5x0,3x1,20x0,2x1,5x0,3x1,20x0,2x1,5x0,3x1,620x0"
+							"data": "62x1,26x0,4x1,26x0,4x1,26x0,4x1,26x0,4x1,26x0,4x1,13x0,5x1,8x0,4x1,13x0,5x1,8x0,4x1,26x0,4x1,21x0,2x1,3x0,4x1,21x0,2x1,3x0,4x1,5x0,2x1,14x0,2x1,3x0,4x1,5x0,2x1,14x0,2x1,3x0,4x1,5x0,2x1,14x0,2x1,3x0,4x1,5x0,2x1,14x0,2x1,3x0,4x1,5x0,2x1,10x0,2x1,2x0,2x1,3x0,4x1,5x0,2x1,10x0,2x1,7x0,4x1,5x0,2x1,10x0,2x1,7x0,4x1,5x0,2x1,10x0,2x1,7x0,4x1,17x0,2x1,7x0,4x1,14x0,5x1,7x0,4x1,14x0,5x1,7x0,4x1,26x0,4x1,4x0,6x1,16x0,4x1,4x0,6x1,16x0,4x1,4x0,2x1,20x0,4x1,4x0,2x1,20x0,4x1,4x0,2x1,20x0,4x1,4x0,2x1,8x0,2x1,10x0,4x1,14x0,2x1,10x0,4x1,14x0,2x1,10x0,4x1,14x0,2x1,10x0,4x1,14x0,2x1,10x0,4x1,14x0,2x1,10x0,4x1,14x0,2x1,10x0,4x1,26x0,4x1,26x0,62x1"
 						},
 						"tile-width": 32,
 						"tile-height": 32,
@@ -107,7 +107,7 @@
 					}
 				},
 				{
-					"type": "spr_enemy",
+					"type": "spr_simple_enemy",
 					"properties": {
 						"initially-visible": true,
 						"initial-animation": "Animation 1",
@@ -118,14 +118,25 @@
 					"uid": 8,
 					"instanceVariables": {},
 					"behaviors": {
+						"Knockback": {
+							"properties": {
+								"speed": 0,
+								"acceleration": 0,
+								"gravity": 0,
+								"bounce-off-solids": false,
+								"set-angle": false,
+								"step": false,
+								"enabled": true
+							}
+						},
 						"Solid": {
 							"properties": {
 								"enabled": true
 							}
 						},
-						"Bullet": {
+						"Follow": {
 							"properties": {
-								"speed": 0,
+								"speed": 50,
 								"acceleration": 0,
 								"gravity": 0,
 								"bounce-off-solids": false,
@@ -136,8 +147,8 @@
 						}
 					},
 					"world": {
-						"x": 555,
-						"y": 401,
+						"x": 1099,
+						"y": 190,
 						"width": 35,
 						"height": 35,
 						"originX": 0.5,
@@ -152,7 +163,7 @@
 					}
 				},
 				{
-					"type": "spr_enemy",
+					"type": "spr_simple_enemy",
 					"properties": {
 						"initially-visible": true,
 						"initial-animation": "Animation 1",
@@ -163,14 +174,25 @@
 					"uid": 9,
 					"instanceVariables": {},
 					"behaviors": {
+						"Knockback": {
+							"properties": {
+								"speed": 0,
+								"acceleration": 0,
+								"gravity": 0,
+								"bounce-off-solids": false,
+								"set-angle": false,
+								"step": false,
+								"enabled": true
+							}
+						},
 						"Solid": {
 							"properties": {
 								"enabled": true
 							}
 						},
-						"Bullet": {
+						"Follow": {
 							"properties": {
-								"speed": 0,
+								"speed": 50,
 								"acceleration": 0,
 								"gravity": 0,
 								"bounce-off-solids": false,
@@ -181,8 +203,8 @@
 						}
 					},
 					"world": {
-						"x": 115,
-						"y": 355,
+						"x": 169,
+						"y": 358,
 						"width": 35,
 						"height": 35,
 						"originX": 0.5,
@@ -197,7 +219,7 @@
 					}
 				},
 				{
-					"type": "spr_enemy",
+					"type": "spr_simple_enemy",
 					"properties": {
 						"initially-visible": true,
 						"initial-animation": "Animation 1",
@@ -208,14 +230,25 @@
 					"uid": 10,
 					"instanceVariables": {},
 					"behaviors": {
+						"Knockback": {
+							"properties": {
+								"speed": 0,
+								"acceleration": 0,
+								"gravity": 0,
+								"bounce-off-solids": false,
+								"set-angle": false,
+								"step": false,
+								"enabled": true
+							}
+						},
 						"Solid": {
 							"properties": {
 								"enabled": true
 							}
 						},
-						"Bullet": {
+						"Follow": {
 							"properties": {
-								"speed": 0,
+								"speed": 50,
 								"acceleration": 0,
 								"gravity": 0,
 								"bounce-off-solids": false,
@@ -226,8 +259,176 @@
 						}
 					},
 					"world": {
-						"x": 397,
-						"y": 119,
+						"x": 429,
+						"y": 114,
+						"width": 35,
+						"height": 35,
+						"originX": 0.5,
+						"originY": 0.5,
+						"color": [
+							1,
+							1,
+							1,
+							1
+						],
+						"angle": 0
+					}
+				},
+				{
+					"type": "spr_simple_enemy",
+					"properties": {
+						"initially-visible": true,
+						"initial-animation": "Animation 1",
+						"initial-frame": 0,
+						"enable-collisions": true,
+						"live-preview": false
+					},
+					"uid": 11,
+					"instanceVariables": {},
+					"behaviors": {
+						"Knockback": {
+							"properties": {
+								"speed": 0,
+								"acceleration": 0,
+								"gravity": 0,
+								"bounce-off-solids": false,
+								"set-angle": false,
+								"step": false,
+								"enabled": true
+							}
+						},
+						"Solid": {
+							"properties": {
+								"enabled": true
+							}
+						},
+						"Follow": {
+							"properties": {
+								"speed": 50,
+								"acceleration": 0,
+								"gravity": 0,
+								"bounce-off-solids": false,
+								"set-angle": false,
+								"step": false,
+								"enabled": true
+							}
+						}
+					},
+					"world": {
+						"x": 200,
+						"y": 751,
+						"width": 35,
+						"height": 35,
+						"originX": 0.5,
+						"originY": 0.5,
+						"color": [
+							1,
+							1,
+							1,
+							1
+						],
+						"angle": 0
+					}
+				},
+				{
+					"type": "spr_simple_enemy",
+					"properties": {
+						"initially-visible": true,
+						"initial-animation": "Animation 1",
+						"initial-frame": 0,
+						"enable-collisions": true,
+						"live-preview": false
+					},
+					"uid": 12,
+					"instanceVariables": {},
+					"behaviors": {
+						"Knockback": {
+							"properties": {
+								"speed": 0,
+								"acceleration": 0,
+								"gravity": 0,
+								"bounce-off-solids": false,
+								"set-angle": false,
+								"step": false,
+								"enabled": true
+							}
+						},
+						"Solid": {
+							"properties": {
+								"enabled": true
+							}
+						},
+						"Follow": {
+							"properties": {
+								"speed": 50,
+								"acceleration": 0,
+								"gravity": 0,
+								"bounce-off-solids": false,
+								"set-angle": false,
+								"step": false,
+								"enabled": true
+							}
+						}
+					},
+					"world": {
+						"x": 860,
+						"y": 777,
+						"width": 35,
+						"height": 35,
+						"originX": 0.5,
+						"originY": 0.5,
+						"color": [
+							1,
+							1,
+							1,
+							1
+						],
+						"angle": 0
+					}
+				},
+				{
+					"type": "spr_simple_enemy",
+					"properties": {
+						"initially-visible": true,
+						"initial-animation": "Animation 1",
+						"initial-frame": 0,
+						"enable-collisions": true,
+						"live-preview": false
+					},
+					"uid": 13,
+					"instanceVariables": {},
+					"behaviors": {
+						"Knockback": {
+							"properties": {
+								"speed": 0,
+								"acceleration": 0,
+								"gravity": 0,
+								"bounce-off-solids": false,
+								"set-angle": false,
+								"step": false,
+								"enabled": true
+							}
+						},
+						"Solid": {
+							"properties": {
+								"enabled": true
+							}
+						},
+						"Follow": {
+							"properties": {
+								"speed": 50,
+								"acceleration": 0,
+								"gravity": 0,
+								"bounce-off-solids": false,
+								"set-angle": false,
+								"step": false,
+								"enabled": true
+							}
+						}
+					},
+					"world": {
+						"x": 1105,
+						"y": 666,
 						"width": 35,
 						"height": 35,
 						"originX": 0.5,
@@ -295,8 +496,8 @@
 						}
 					},
 					"world": {
-						"x": 191,
-						"y": 248,
+						"x": 666,
+						"y": 425,
 						"width": 35,
 						"height": 35,
 						"originX": 0.5,

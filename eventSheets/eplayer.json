@@ -535,12 +535,12 @@
 					],
 					"actions": [
 						{
-							"id": "set-enabled",
+							"id": "set-speed",
 							"objectClass": "spr_bullet_wall",
-							"sid": 908815045527190,
+							"sid": 333032992222593,
 							"behaviorType": "Bullet",
 							"parameters": {
-								"state": "disabled"
+								"speed": "0"
 							}
 						}
 					],

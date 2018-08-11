@@ -89,9 +89,7 @@
 	],
 	"uniqueId": "n9d856u12yp",
 	"objectTypes": {
-		"items": [
-			"spr_enemy"
-		],
+		"items": [],
 		"subfolders": [
 			{
 				"items": [
@@ -117,13 +115,22 @@
 				],
 				"subfolders": [],
 				"name": "Player"
+			},
+			{
+				"items": [
+					"spr_simple_enemy"
+				],
+				"subfolders": [],
+				"name": "Enemies"
 			}
 		]
 	},
 	"autosaveData": null,
 	"containers": [],
 	"families": {
-		"items": [],
+		"items": [
+			"Enemies"
+		],
 		"subfolders": []
 	},
 	"layouts": {

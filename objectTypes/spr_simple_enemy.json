@@ -1,19 +1,14 @@
 {
-	"name": "spr_enemy",
+	"name": "spr_simple_enemy",
 	"plugin-id": "Sprite",
 	"sid": 757775932334677,
 	"isGlobal": false,
 	"instanceVariables": [],
 	"behaviorTypes": [
 		{
-			"behaviorId": "solid",
-			"name": "Solid",
-			"sid": 831259726670323
-		},
-		{
 			"behaviorId": "Bullet",
-			"name": "Bullet",
-			"sid": 556230633524265
+			"name": "Follow",
+			"sid": 633556979626294
 		}
 	],
 	"effectTypes": [],

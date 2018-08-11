@@ -1,0 +1,22 @@
+{
+	"name": "Enemies",
+	"plugin-id": "Sprite",
+	"sid": 587568989871372,
+	"instanceVariables": [],
+	"behaviorTypes": [
+		{
+			"behaviorId": "Bullet",
+			"name": "Knockback",
+			"sid": 508916292045999
+		},
+		{
+			"behaviorId": "solid",
+			"name": "Solid",
+			"sid": 328141687089980
+		}
+	],
+	"effectTypes": [],
+	"members": [
+		"spr_simple_enemy"
+	]
+}

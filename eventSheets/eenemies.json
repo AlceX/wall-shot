@@ -2,67 +2,166 @@
 	"name": "eEnemies",
 	"events": [
 		{
-			"eventType": "block",
-			"conditions": [
+			"eventType": "group",
+			"disabled": false,
+			"title": "eEnemies/General",
+			"description": "",
+			"isActiveOnStart": true,
+			"children": [
 				{
-					"id": "is-overlapping-another-object",
-					"objectClass": "spr_enemy",
-					"sid": 153203545799842,
-					"parameters": {
-						"object": "spr_bullet_wall"
-					}
-				}
-			],
-			"actions": [
-				{
-					"id": "set-angle-of-motion",
-					"objectClass": "spr_enemy",
-					"sid": 487482389916751,
-					"behaviorType": "Bullet",
-					"parameters": {
-						"angle": "spr_bullet_wall.Bullet.AngleOfMotion"
-					}
+					"eventType": "block",
+					"conditions": [
+						{
+							"id": "is-overlapping-another-object",
+							"objectClass": "Enemies",
+							"sid": 860321080592927,
+							"parameters": {
+								"object": "spr_bullet_wall"
+							}
+						}
+					],
+					"actions": [
+						{
+							"id": "set-angle-of-motion",
+							"objectClass": "Enemies",
+							"sid": 668982729618937,
+							"behaviorType": "Knockback",
+							"parameters": {
+								"angle": "spr_bullet_wall.Bullet.AngleOfMotion"
+							}
+						},
+						{
+							"id": "set-speed",
+							"objectClass": "Enemies",
+							"sid": 679950970798202,
+							"behaviorType": "Knockback",
+							"parameters": {
+								"speed": "spr_bullet_wall.Bullet.Speed"
+							}
+						}
+					],
+					"sid": 459092640018135
 				},
 				{
-					"id": "set-speed",
-					"objectClass": "spr_enemy",
-					"sid": 241207540327301,
-					"behaviorType": "Bullet",
-					"parameters": {
-						"speed": "spr_bullet_wall.Bullet.Speed"
-					}
+					"eventType": "block",
+					"conditions": [
+						{
+							"id": "is-overlapping-another-object",
+							"objectClass": "Enemies",
+							"sid": 894037973915973,
+							"parameters": {
+								"object": "spr_bullet_wall"
+							}
+						},
+						{
+							"id": "is-overlapping-another-object",
+							"objectClass": "Enemies",
+							"sid": 801293914668235,
+							"parameters": {
+								"object": "tm_collisions"
+							}
+						}
+					],
+					"actions": [
+						{
+							"id": "destroy",
+							"objectClass": "Enemies",
+							"sid": 197293934980919
+						}
+					],
+					"sid": 938005088147472
 				}
 			],
-			"sid": 495303384500143
+			"sid": 759587278020511
 		},
 		{
-			"eventType": "block",
-			"conditions": [
+			"eventType": "group",
+			"disabled": false,
+			"title": "eEnemies/SimpleEnemy",
+			"description": "",
+			"isActiveOnStart": true,
+			"children": [
 				{
-					"id": "is-overlapping-another-object",
-					"objectClass": "spr_enemy",
-					"sid": 129725507392439,
-					"parameters": {
-						"object": "spr_bullet_wall"
-					}
+					"eventType": "block",
+					"conditions": [
+						{
+							"id": "every-tick",
+							"objectClass": "System",
+							"sid": 764815594533120
+						}
+					],
+					"actions": [
+						{
+							"id": "set-angle-of-motion",
+							"objectClass": "spr_simple_enemy",
+							"sid": 262372366516821,
+							"behaviorType": "Follow",
+							"parameters": {
+								"angle": "angle(Self.X, Self.Y, spr_player.X, spr_player.Y)"
+							}
+						}
+					],
+					"sid": 456606069888803
 				},
 				{
-					"id": "is-overlapping-another-object",
-					"objectClass": "spr_enemy",
-					"sid": 850258046797200,
-					"parameters": {
-						"object": "tm_collisions"
-					}
-				}
-			],
-			"actions": [
+					"eventType": "block",
+					"conditions": [
+						{
+							"id": "is-overlapping-another-object",
+							"objectClass": "spr_simple_enemy",
+							"sid": 904729752565750,
+							"parameters": {
+								"object": "spr_bullet_wall"
+							}
+						},
+						{
+							"id": "compare-speed",
+							"objectClass": "spr_bullet_wall",
+							"sid": 811584222255434,
+							"behaviorType": "Bullet",
+							"parameters": {
+								"comparison": 1,
+								"speed": "0"
+							}
+						}
+					],
+					"actions": [
+						{
+							"id": "set-speed",
+							"objectClass": "spr_simple_enemy",
+							"sid": 774844481339490,
+							"behaviorType": "Follow",
+							"parameters": {
+								"speed": "0"
+							}
+						}
+					],
+					"sid": 831723061481061
+				},
 				{
-					"id": "destroy",
-					"objectClass": "spr_enemy",
-					"sid": 513551832145732
+					"eventType": "block",
+					"conditions": [
+						{
+							"id": "else",
+							"objectClass": "System",
+							"sid": 579017406714004
+						}
+					],
+					"actions": [
+						{
+							"id": "set-speed",
+							"objectClass": "spr_simple_enemy",
+							"sid": 545087747244174,
+							"behaviorType": "Follow",
+							"parameters": {
+								"speed": "50"
+							}
+						}
+					],
+					"sid": 279810317367056
 				}
 			],
-			"sid": 848703821864529
+			"sid": 674064055746857
 		}
 	],
 	"sid": 249455583558953
