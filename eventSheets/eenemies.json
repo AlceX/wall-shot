@@ -52,24 +52,191 @@
 							"parameters": {
 								"object": "spr_bullet_wall"
 							}
+						}
+					],
+					"actions": [],
+					"sid": 938005088147472,
+					"children": [
+						{
+							"eventType": "block",
+							"conditions": [
+								{
+									"id": "is-overlapping-another-object",
+									"objectClass": "Enemies",
+									"sid": 506498655347132,
+									"parameters": {
+										"object": "tm_collisions"
+									}
+								},
+								{
+									"id": "compare-speed",
+									"objectClass": "spr_bullet_wall",
+									"sid": 708553011677372,
+									"behaviorType": "Bullet",
+									"parameters": {
+										"comparison": 1,
+										"speed": "0"
+									}
+								}
+							],
+							"actions": [
+								{
+									"id": "destroy",
+									"objectClass": "Enemies",
+									"sid": 413185656937459
+								}
+							],
+							"sid": 167844149334546
 						},
 						{
-							"id": "is-overlapping-another-object",
-							"objectClass": "Enemies",
-							"sid": 801293914668235,
-							"parameters": {
-								"object": "tm_collisions"
-							}
+							"eventType": "block",
+							"conditions": [
+								{
+									"id": "else",
+									"objectClass": "System",
+									"sid": 504011103288381
+								},
+								{
+									"id": "compare-two-values",
+									"objectClass": "System",
+									"sid": 889693776966363,
+									"parameters": {
+										"first-value": "spr_bullet_wall.PickedCount",
+										"comparison": 0,
+										"second-value": "2"
+									}
+								}
+							],
+							"actions": [],
+							"sid": 834845813986643,
+							"children": [
+								{
+									"eventType": "comment",
+									"text": "I'm not sure if there's a more elegant way to check that one is moving and the other isn't..."
+								},
+								{
+									"eventType": "variable",
+									"name": "one_is_moving",
+									"type": "boolean",
+									"initialValue": "false",
+									"comment": "",
+									"isStatic": false,
+									"isConstant": false,
+									"sid": 167579266636965
+								},
+								{
+									"eventType": "variable",
+									"name": "one_is_still",
+									"type": "boolean",
+									"initialValue": "false",
+									"comment": "",
+									"isStatic": false,
+									"isConstant": false,
+									"sid": 900780893135913
+								},
+								{
+									"eventType": "block",
+									"conditions": [
+										{
+											"id": "for-each",
+											"objectClass": "System",
+											"sid": 885180827408447,
+											"parameters": {
+												"object": "spr_bullet_wall"
+											}
+										}
+									],
+									"actions": [],
+									"sid": 234036214164894,
+									"children": [
+										{
+											"eventType": "block",
+											"conditions": [
+												{
+													"id": "compare-speed",
+													"objectClass": "spr_bullet_wall",
+													"sid": 409576357595795,
+													"behaviorType": "Bullet",
+													"parameters": {
+														"comparison": 0,
+														"speed": "0"
+													}
+												}
+											],
+											"actions": [
+												{
+													"id": "set-boolean-eventvar",
+													"objectClass": "System",
+													"sid": 852882381150503,
+													"parameters": {
+														"variable": "one_is_still",
+														"value": "true"
+													}
+												}
+											],
+											"sid": 197109685287160
+										},
+										{
+											"eventType": "block",
+											"conditions": [
+												{
+													"id": "compare-speed",
+													"objectClass": "spr_bullet_wall",
+													"sid": 383298133362715,
+													"behaviorType": "Bullet",
+													"parameters": {
+														"comparison": 1,
+														"speed": "0"
+													}
+												}
+											],
+											"actions": [
+												{
+													"id": "set-boolean-eventvar",
+													"objectClass": "System",
+													"sid": 314953872834158,
+													"parameters": {
+														"variable": "one_is_moving",
+														"value": "true"
+													}
+												}
+											],
+											"sid": 410643951031023
+										}
+									]
+								},
+								{
+									"eventType": "block",
+									"conditions": [
+										{
+											"id": "compare-boolean-eventvar",
+											"objectClass": "System",
+											"sid": 726660598216906,
+											"parameters": {
+												"variable": "one_is_moving"
+											}
+										},
+										{
+											"id": "compare-boolean-eventvar",
+											"objectClass": "System",
+											"sid": 104771756969544,
+											"parameters": {
+												"variable": "one_is_still"
+											}
+										}
+									],
+									"actions": [
+										{
+											"id": "destroy",
+											"objectClass": "Enemies",
+											"sid": 223856984498602
+										}
+									],
+									"sid": 960300518018418
+								}
+							]
 						}
-					],
-					"actions": [
-						{
-							"id": "destroy",
-							"objectClass": "Enemies",
-							"sid": 197293934980919
-						}
-					],
-					"sid": 938005088147472
+					]
 				}
 			],
 			"sid": 759587278020511

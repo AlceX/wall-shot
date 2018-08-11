@@ -8,11 +8,6 @@
 			"behaviorId": "Bullet",
 			"name": "Knockback",
 			"sid": 508916292045999
-		},
-		{
-			"behaviorId": "solid",
-			"name": "Solid",
-			"sid": 328141687089980
 		}
 	],
 	"effectTypes": [],
