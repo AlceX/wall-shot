@@ -474,6 +474,24 @@
 									}
 								},
 								{
+									"id": "set-animation",
+									"objectClass": "spr_bullet_wall",
+									"sid": 733483234387145,
+									"parameters": {
+										"animation": "choose(\"I\", \"O\", \"L\", \"S\", \"T\")",
+										"from": "beginning"
+									}
+								},
+								{
+									"id": "set-position",
+									"objectClass": "spr_bullet_wall",
+									"sid": 996051606050422,
+									"parameters": {
+										"x": "32 *  round(Self.X / 32)",
+										"y": "32 *  round(Self.Y / 32)"
+									}
+								},
+								{
 									"id": "set-angle-of-motion",
 									"objectClass": "spr_bullet_wall",
 									"sid": 675919856247444,
@@ -534,6 +552,15 @@
 						}
 					],
 					"actions": [
+						{
+							"id": "set-position",
+							"objectClass": "spr_bullet_wall",
+							"sid": 303678749268401,
+							"parameters": {
+								"x": "32 *  round(Self.X / 32)",
+								"y": "32 *  round(Self.Y / 32)"
+							}
+						},
 						{
 							"id": "set-speed",
 							"objectClass": "spr_bullet_wall",
