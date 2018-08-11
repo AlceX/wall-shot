@@ -1,0 +1,209 @@
+{
+	"name": "spr_preview_tetromino",
+	"plugin-id": "Sprite",
+	"sid": 345321802881668,
+	"isGlobal": false,
+	"instanceVariables": [],
+	"behaviorTypes": [],
+	"effectTypes": [
+		{
+			"effectId": "replacecolor",
+			"name": "ReplaceColor"
+		}
+	],
+	"animations": {
+		"items": [
+			{
+				"frames": [
+					{
+						"width": 64,
+						"height": 64,
+						"originX": 0,
+						"originY": 0,
+						"originalSource": "",
+						"exportFormat": "png",
+						"exportQuality": 0.8,
+						"imageSpriteId": 28,
+						"collisionPoly": {
+							"points": [
+								0.015625,
+								0.015625,
+								0.984375,
+								0.015625,
+								0.984375,
+								0.984375,
+								0.015625,
+								0.984375
+							]
+						},
+						"duration": 1
+					}
+				],
+				"sid": 880041459631954,
+				"name": "O",
+				"isLooping": false,
+				"isPingPong": false,
+				"repeatCount": 1,
+				"repeatTo": 0,
+				"speed": 5
+			},
+			{
+				"frames": [
+					{
+						"width": 128,
+						"height": 32,
+						"originX": 0,
+						"originY": 0,
+						"originalSource": "",
+						"exportFormat": "png",
+						"exportQuality": 0.8,
+						"imageSpriteId": 29,
+						"collisionPoly": {
+							"points": [
+								0.0078125,
+								0.03125,
+								0.9921875,
+								0.03125,
+								0.9921875,
+								0.96875,
+								0.0078125,
+								0.96875
+							]
+						},
+						"duration": 1
+					}
+				],
+				"sid": 833651170052535,
+				"name": "I",
+				"isLooping": false,
+				"isPingPong": false,
+				"repeatCount": 1,
+				"repeatTo": 0,
+				"speed": 5
+			},
+			{
+				"frames": [
+					{
+						"width": 96,
+						"height": 64,
+						"originX": 0,
+						"originY": 0,
+						"originalSource": "",
+						"exportFormat": "png",
+						"exportQuality": 0.8,
+						"imageSpriteId": 30,
+						"collisionPoly": {
+							"points": [
+								0.010416666666666666,
+								0.015625,
+								0.9895833333333334,
+								0.015625,
+								0.9895833333333334,
+								0.484375,
+								0.65625,
+								0.484375,
+								0.65625,
+								0.984375,
+								0.3541666666666667,
+								0.984375,
+								0.3541666666666667,
+								0.484375,
+								0.010416666666666666,
+								0.484375
+							]
+						},
+						"duration": 1
+					}
+				],
+				"sid": 880898324616451,
+				"name": "T",
+				"isLooping": false,
+				"isPingPong": false,
+				"repeatCount": 1,
+				"repeatTo": 0,
+				"speed": 5
+			},
+			{
+				"frames": [
+					{
+						"width": 96,
+						"height": 64,
+						"originX": 0,
+						"originY": 0,
+						"originalSource": "",
+						"exportFormat": "png",
+						"exportQuality": 0.8,
+						"imageSpriteId": 31,
+						"collisionPoly": {
+							"points": [
+								0.010416666666666666,
+								0.015625,
+								0.9895833333333334,
+								0.015625,
+								0.9895833333333334,
+								0.484375,
+								0.3229166666666667,
+								0.484375,
+								0.3229166666666667,
+								0.984375,
+								0.010416666666666666,
+								0.984375
+							]
+						},
+						"duration": 1
+					}
+				],
+				"sid": 531406836539510,
+				"name": "L",
+				"isLooping": false,
+				"isPingPong": false,
+				"repeatCount": 1,
+				"repeatTo": 0,
+				"speed": 5
+			},
+			{
+				"frames": [
+					{
+						"width": 96,
+						"height": 64,
+						"originX": 0,
+						"originY": 0,
+						"originalSource": "",
+						"exportFormat": "png",
+						"exportQuality": 0.8,
+						"imageSpriteId": 32,
+						"collisionPoly": {
+							"points": [
+								0.3541666666666667,
+								0.015625,
+								0.9895833333333334,
+								0.015625,
+								0.9895833333333334,
+								0.484375,
+								0.65625,
+								0.484375,
+								0.65625,
+								0.984375,
+								0.010416666666666666,
+								0.984375,
+								0.010416666666666666,
+								0.53125,
+								0.3541666666666667,
+								0.53125
+							]
+						},
+						"duration": 1
+					}
+				],
+				"sid": 379733451839644,
+				"name": "S",
+				"isLooping": false,
+				"isPingPong": false,
+				"repeatCount": 1,
+				"repeatTo": 0,
+				"speed": 5
+			}
+		],
+		"subfolders": []
+	}
+}

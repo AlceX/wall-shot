@@ -85,6 +85,14 @@
 			"author": "Scirra",
 			"version": "r111",
 			"bundled": false
+		},
+		{
+			"type": "effect",
+			"id": "replacecolor",
+			"name": "Replace color",
+			"author": "Scirra",
+			"version": "r111",
+			"bundled": false
 		}
 	],
 	"uniqueId": "n9d856u12yp",
@@ -111,7 +119,8 @@
 				"items": [
 					"obj_camera",
 					"spr_player",
-					"spr_bullet_wall"
+					"spr_tetromino",
+					"spr_preview_tetromino"
 				],
 				"subfolders": [],
 				"name": "Player"

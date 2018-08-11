@@ -16,7 +16,7 @@
 							"objectClass": "Enemies",
 							"sid": 860321080592927,
 							"parameters": {
-								"object": "spr_bullet_wall"
+								"object": "spr_tetromino"
 							}
 						}
 					],
@@ -27,7 +27,7 @@
 							"sid": 668982729618937,
 							"behaviorType": "Knockback",
 							"parameters": {
-								"angle": "spr_bullet_wall.Bullet.AngleOfMotion"
+								"angle": "spr_tetromino.Bullet.AngleOfMotion"
 							}
 						},
 						{
@@ -36,7 +36,7 @@
 							"sid": 679950970798202,
 							"behaviorType": "Knockback",
 							"parameters": {
-								"speed": "spr_bullet_wall.Bullet.Speed"
+								"speed": "spr_tetromino.Bullet.Speed"
 							}
 						}
 					],
@@ -50,7 +50,7 @@
 							"objectClass": "Enemies",
 							"sid": 894037973915973,
 							"parameters": {
-								"object": "spr_bullet_wall"
+								"object": "spr_tetromino"
 							}
 						}
 					],
@@ -70,7 +70,7 @@
 								},
 								{
 									"id": "compare-speed",
-									"objectClass": "spr_bullet_wall",
+									"objectClass": "spr_tetromino",
 									"sid": 708553011677372,
 									"behaviorType": "Bullet",
 									"parameters": {
@@ -101,7 +101,7 @@
 									"objectClass": "System",
 									"sid": 889693776966363,
 									"parameters": {
-										"first-value": "spr_bullet_wall.PickedCount",
+										"first-value": "spr_tetromino.PickedCount",
 										"comparison": 0,
 										"second-value": "2"
 									}
@@ -142,7 +142,7 @@
 											"objectClass": "System",
 											"sid": 885180827408447,
 											"parameters": {
-												"object": "spr_bullet_wall"
+												"object": "spr_tetromino"
 											}
 										}
 									],
@@ -154,7 +154,7 @@
 											"conditions": [
 												{
 													"id": "compare-speed",
-													"objectClass": "spr_bullet_wall",
+													"objectClass": "spr_tetromino",
 													"sid": 409576357595795,
 													"behaviorType": "Bullet",
 													"parameters": {
@@ -181,7 +181,7 @@
 											"conditions": [
 												{
 													"id": "compare-speed",
-													"objectClass": "spr_bullet_wall",
+													"objectClass": "spr_tetromino",
 													"sid": 383298133362715,
 													"behaviorType": "Bullet",
 													"parameters": {
@@ -278,12 +278,12 @@
 							"objectClass": "spr_simple_enemy",
 							"sid": 904729752565750,
 							"parameters": {
-								"object": "spr_bullet_wall"
+								"object": "spr_tetromino"
 							}
 						},
 						{
 							"id": "compare-speed",
-							"objectClass": "spr_bullet_wall",
+							"objectClass": "spr_tetromino",
 							"sid": 811584222255434,
 							"behaviorType": "Bullet",
 							"parameters": {

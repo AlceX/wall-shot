@@ -12,110 +12,6 @@
 					"eventType": "block",
 					"conditions": [
 						{
-							"id": "key-is-down",
-							"objectClass": "Keyboard",
-							"sid": 998131848318953,
-							"parameters": {
-								"key": 87
-							}
-						}
-					],
-					"actions": [
-						{
-							"id": "send-event",
-							"objectClass": "EventTrigger",
-							"sid": 739729433390446,
-							"parameters": {
-								"event-name": "\"moving_up\"",
-								"event-message": "0",
-								"event-messages-additional": []
-							}
-						}
-					],
-					"sid": 623014514698096
-				},
-				{
-					"eventType": "block",
-					"conditions": [
-						{
-							"id": "key-is-down",
-							"objectClass": "Keyboard",
-							"sid": 809393370397349,
-							"parameters": {
-								"key": 65
-							}
-						}
-					],
-					"actions": [
-						{
-							"id": "send-event",
-							"objectClass": "EventTrigger",
-							"sid": 400850975117906,
-							"parameters": {
-								"event-name": "\"moving_left\"",
-								"event-message": "0",
-								"event-messages-additional": []
-							}
-						}
-					],
-					"sid": 122685072845967
-				},
-				{
-					"eventType": "block",
-					"conditions": [
-						{
-							"id": "key-is-down",
-							"objectClass": "Keyboard",
-							"sid": 555679877441779,
-							"parameters": {
-								"key": 83
-							}
-						}
-					],
-					"actions": [
-						{
-							"id": "send-event",
-							"objectClass": "EventTrigger",
-							"sid": 727344465588739,
-							"parameters": {
-								"event-name": "\"moving_down\"",
-								"event-message": "0",
-								"event-messages-additional": []
-							}
-						}
-					],
-					"sid": 835608403362641
-				},
-				{
-					"eventType": "block",
-					"conditions": [
-						{
-							"id": "key-is-down",
-							"objectClass": "Keyboard",
-							"sid": 400069663136817,
-							"parameters": {
-								"key": 68
-							}
-						}
-					],
-					"actions": [
-						{
-							"id": "send-event",
-							"objectClass": "EventTrigger",
-							"sid": 813619209061708,
-							"parameters": {
-								"event-name": "\"moving_right\"",
-								"event-message": "0",
-								"event-messages-additional": []
-							}
-						}
-					],
-					"sid": 448779490882666
-				},
-				{
-					"eventType": "block",
-					"conditions": [
-						{
 							"id": "on-key-pressed",
 							"objectClass": "Keyboard",
 							"sid": 964565184534731,
@@ -128,9 +24,9 @@
 						{
 							"id": "send-event",
 							"objectClass": "EventTrigger",
-							"sid": 700886466277826,
+							"sid": 146411033674036,
 							"parameters": {
-								"event-name": "\"shoot\"",
+								"event-name": "\"direction\"",
 								"event-message": "\"up\"",
 								"event-messages-additional": []
 							}
@@ -154,9 +50,9 @@
 						{
 							"id": "send-event",
 							"objectClass": "EventTrigger",
-							"sid": 491529163676095,
+							"sid": 946067616852476,
 							"parameters": {
-								"event-name": "\"shoot\"",
+								"event-name": "\"direction\"",
 								"event-message": "\"left\"",
 								"event-messages-additional": []
 							}
@@ -180,9 +76,9 @@
 						{
 							"id": "send-event",
 							"objectClass": "EventTrigger",
-							"sid": 145755151040741,
+							"sid": 155369549005804,
 							"parameters": {
-								"event-name": "\"shoot\"",
+								"event-name": "\"direction\"",
 								"event-message": "\"down\"",
 								"event-messages-additional": []
 							}
@@ -206,15 +102,41 @@
 						{
 							"id": "send-event",
 							"objectClass": "EventTrigger",
-							"sid": 274322227400145,
+							"sid": 278227961038289,
 							"parameters": {
-								"event-name": "\"shoot\"",
+								"event-name": "\"direction\"",
 								"event-message": "\"right\"",
 								"event-messages-additional": []
 							}
 						}
 					],
 					"sid": 216526827279718
+				},
+				{
+					"eventType": "block",
+					"conditions": [
+						{
+							"id": "on-key-pressed",
+							"objectClass": "Keyboard",
+							"sid": 307583656092669,
+							"parameters": {
+								"key": 32
+							}
+						}
+					],
+					"actions": [
+						{
+							"id": "send-event",
+							"objectClass": "EventTrigger",
+							"sid": 192905532268573,
+							"parameters": {
+								"event-name": "\"shoot\"",
+								"event-message": "0",
+								"event-messages-additional": []
+							}
+						}
+					],
+					"sid": 867479133637893
 				}
 			],
 			"sid": 410123507614538
@@ -232,99 +154,24 @@
 						{
 							"id": "event-triggered",
 							"objectClass": "EventTrigger",
-							"sid": 550972703595180,
+							"sid": 985408879451394,
 							"parameters": {
-								"event-respond-to": "\"moving_up\""
+								"event-respond-to": "\"direction\""
 							}
 						}
 					],
 					"actions": [
 						{
-							"id": "simulate-control",
+							"id": "set-instvar-value",
 							"objectClass": "spr_player",
-							"sid": 176312257828281,
-							"behaviorType": "8Direction",
+							"sid": 369324590901469,
 							"parameters": {
-								"control": "up"
+								"instance-variable": "direction",
+								"value": "EventTrigger.GetEventMessageAt(0)"
 							}
 						}
 					],
-					"sid": 583081548513222
-				},
-				{
-					"eventType": "block",
-					"conditions": [
-						{
-							"id": "event-triggered",
-							"objectClass": "EventTrigger",
-							"sid": 880173580674621,
-							"parameters": {
-								"event-respond-to": "\"moving_left\""
-							}
-						}
-					],
-					"actions": [
-						{
-							"id": "simulate-control",
-							"objectClass": "spr_player",
-							"sid": 544953995577675,
-							"behaviorType": "8Direction",
-							"parameters": {
-								"control": "left"
-							}
-						}
-					],
-					"sid": 939153965287425
-				},
-				{
-					"eventType": "block",
-					"conditions": [
-						{
-							"id": "event-triggered",
-							"objectClass": "EventTrigger",
-							"sid": 725628506378753,
-							"parameters": {
-								"event-respond-to": "\"moving_down\""
-							}
-						}
-					],
-					"actions": [
-						{
-							"id": "simulate-control",
-							"objectClass": "spr_player",
-							"sid": 864309589748069,
-							"behaviorType": "8Direction",
-							"parameters": {
-								"control": "down"
-							}
-						}
-					],
-					"sid": 521279615470283
-				},
-				{
-					"eventType": "block",
-					"conditions": [
-						{
-							"id": "event-triggered",
-							"objectClass": "EventTrigger",
-							"sid": 336146937037125,
-							"parameters": {
-								"event-respond-to": "\"moving_right\""
-							}
-						}
-					],
-					"actions": [
-						{
-							"id": "simulate-control",
-							"objectClass": "spr_player",
-							"sid": 323461077309823,
-							"behaviorType": "8Direction",
-							"parameters": {
-								"control": "right"
-							}
-						}
-					],
-					"sid": 731132063742223
+					"sid": 978250146609720
 				},
 				{
 					"eventType": "block",
@@ -342,166 +189,175 @@
 					"sid": 734453713535046,
 					"children": [
 						{
-							"eventType": "variable",
-							"name": "direction",
-							"type": "number",
-							"initialValue": "0",
-							"comment": "",
-							"isStatic": false,
-							"isConstant": false,
-							"sid": 441399339906469
-						},
-						{
 							"eventType": "block",
 							"conditions": [
 								{
-									"id": "compare-two-values",
-									"objectClass": "System",
-									"sid": 408082157645851,
+									"id": "is-overlapping-another-object",
+									"objectClass": "spr_preview_tetromino",
+									"sid": 111211306254361,
 									"parameters": {
-										"first-value": "EventTrigger.GetEventMessageAt(0)",
-										"comparison": 0,
-										"second-value": "\"up\""
-									}
-								}
-							],
-							"actions": [
-								{
-									"id": "set-eventvar-value",
-									"objectClass": "System",
-									"sid": 783577696706172,
-									"parameters": {
-										"variable": "direction",
-										"value": "270"
-									}
-								}
-							],
-							"sid": 258892038977350
-						},
-						{
-							"eventType": "block",
-							"conditions": [
-								{
-									"id": "compare-two-values",
-									"objectClass": "System",
-									"sid": 496161511128578,
-									"parameters": {
-										"first-value": "EventTrigger.GetEventMessageAt(0)",
-										"comparison": 0,
-										"second-value": "\"left\""
-									}
-								}
-							],
-							"actions": [
-								{
-									"id": "set-eventvar-value",
-									"objectClass": "System",
-									"sid": 975279035982118,
-									"parameters": {
-										"variable": "direction",
-										"value": "180"
-									}
-								}
-							],
-							"sid": 370146158351648
-						},
-						{
-							"eventType": "block",
-							"conditions": [
-								{
-									"id": "compare-two-values",
-									"objectClass": "System",
-									"sid": 626293049276378,
-									"parameters": {
-										"first-value": "EventTrigger.GetEventMessageAt(0)",
-										"comparison": 0,
-										"second-value": "\"down\""
-									}
-								}
-							],
-							"actions": [
-								{
-									"id": "set-eventvar-value",
-									"objectClass": "System",
-									"sid": 344169388643428,
-									"parameters": {
-										"variable": "direction",
-										"value": "90"
-									}
-								}
-							],
-							"sid": 351009565559773
-						},
-						{
-							"eventType": "block",
-							"conditions": [
-								{
-									"id": "compare-two-values",
-									"objectClass": "System",
-									"sid": 648355232166100,
-									"parameters": {
-										"first-value": "EventTrigger.GetEventMessageAt(0)",
-										"comparison": 0,
-										"second-value": "\"right\""
-									}
-								}
-							],
-							"actions": [
-								{
-									"id": "set-eventvar-value",
-									"objectClass": "System",
-									"sid": 700877193154255,
-									"parameters": {
-										"variable": "direction",
-										"value": "0"
-									}
-								}
-							],
-							"sid": 440216123584712
-						},
-						{
-							"eventType": "block",
-							"conditions": [],
-							"actions": [
-								{
-									"id": "spawn-another-object",
-									"objectClass": "spr_player",
-									"sid": 246462903626947,
-									"parameters": {
-										"object": "spr_bullet_wall",
-										"layer": "\"objects\"",
-										"image-point": "0"
-									}
+										"object": "tm_collisions"
+									},
+									"isInverted": true
 								},
 								{
-									"id": "set-animation",
-									"objectClass": "spr_bullet_wall",
-									"sid": 733483234387145,
+									"id": "is-overlapping-another-object",
+									"objectClass": "spr_preview_tetromino",
+									"sid": 211997069735043,
 									"parameters": {
-										"animation": "choose(\"I\", \"O\", \"L\", \"S\", \"T\")",
-										"from": "beginning"
-									}
-								},
-								{
-									"id": "set-position",
-									"objectClass": "spr_bullet_wall",
-									"sid": 996051606050422,
-									"parameters": {
-										"x": "32 *  round(Self.X / 32)",
-										"y": "32 *  round(Self.Y / 32)"
-									}
-								},
-								{
-									"id": "set-angle-of-motion",
-									"objectClass": "spr_bullet_wall",
-									"sid": 675919856247444,
-									"behaviorType": "Bullet",
-									"parameters": {
-										"angle": "direction"
-									}
+										"object": "spr_tetromino"
+									},
+									"isInverted": true
 								}
 							],
-							"sid": 396816241997028
+							"actions": [],
+							"sid": 145291321994858,
+							"children": [
+								{
+									"eventType": "variable",
+									"name": "direction",
+									"type": "number",
+									"initialValue": "0",
+									"comment": "",
+									"isStatic": false,
+									"isConstant": false,
+									"sid": 224855125250376
+								},
+								{
+									"eventType": "block",
+									"conditions": [
+										{
+											"id": "compare-instance-variable",
+											"objectClass": "spr_player",
+											"sid": 475465569339383,
+											"parameters": {
+												"instance-variable": "direction",
+												"comparison": 0,
+												"value": "\"up\""
+											}
+										}
+									],
+									"actions": [
+										{
+											"id": "set-eventvar-value",
+											"objectClass": "System",
+											"sid": 929991431553382,
+											"parameters": {
+												"variable": "direction",
+												"value": "270"
+											}
+										}
+									],
+									"sid": 916583690273671
+								},
+								{
+									"eventType": "block",
+									"conditions": [
+										{
+											"id": "compare-instance-variable",
+											"objectClass": "spr_player",
+											"sid": 999473153285357,
+											"parameters": {
+												"instance-variable": "direction",
+												"comparison": 0,
+												"value": "\"left\""
+											}
+										}
+									],
+									"actions": [
+										{
+											"id": "set-eventvar-value",
+											"objectClass": "System",
+											"sid": 998047783649686,
+											"parameters": {
+												"variable": "direction",
+												"value": "180"
+											}
+										}
+									],
+									"sid": 574557272330358
+								},
+								{
+									"eventType": "block",
+									"conditions": [
+										{
+											"id": "compare-instance-variable",
+											"objectClass": "spr_player",
+											"sid": 935095854210663,
+											"parameters": {
+												"instance-variable": "direction",
+												"comparison": 0,
+												"value": "\"down\""
+											}
+										}
+									],
+									"actions": [
+										{
+											"id": "set-eventvar-value",
+											"objectClass": "System",
+											"sid": 347491338997788,
+											"parameters": {
+												"variable": "direction",
+												"value": "90"
+											}
+										}
+									],
+									"sid": 951125259029483
+								},
+								{
+									"eventType": "block",
+									"conditions": [
+										{
+											"id": "compare-instance-variable",
+											"objectClass": "spr_player",
+											"sid": 585784730201032,
+											"parameters": {
+												"instance-variable": "direction",
+												"comparison": 0,
+												"value": "\"right\""
+											}
+										}
+									],
+									"actions": [
+										{
+											"id": "set-eventvar-value",
+											"objectClass": "System",
+											"sid": 713003585658627,
+											"parameters": {
+												"variable": "direction",
+												"value": "0"
+											}
+										}
+									],
+									"sid": 680150178953253
+								},
+								{
+									"eventType": "block",
+									"conditions": [],
+									"actions": [
+										{
+											"id": "spawn-another-object",
+											"objectClass": "spr_preview_tetromino",
+											"sid": 126730164315353,
+											"parameters": {
+												"object": "spr_tetromino",
+												"layer": "\"objects\"",
+												"image-point": "0"
+											}
+										},
+										{
+											"id": "set-angle-of-motion",
+											"objectClass": "spr_tetromino",
+											"sid": 255224280017540,
+											"behaviorType": "Bullet",
+											"parameters": {
+												"angle": "direction"
+											}
+										}
+									],
+									"sid": 340976321959208
+								}
+							]
 						}
 					]
 				},
@@ -510,7 +366,7 @@
 					"conditions": [
 						{
 							"id": "is-overlapping-another-object",
-							"objectClass": "spr_bullet_wall",
+							"objectClass": "spr_tetromino",
 							"sid": 438150491718802,
 							"parameters": {
 								"object": "spr_player"
@@ -521,7 +377,7 @@
 					"actions": [
 						{
 							"id": "set-enabled",
-							"objectClass": "spr_bullet_wall",
+							"objectClass": "spr_tetromino",
 							"sid": 684702790700456,
 							"behaviorType": "Solid",
 							"parameters": {
@@ -536,7 +392,7 @@
 					"conditions": [
 						{
 							"id": "on-collision-with-another-object",
-							"objectClass": "spr_bullet_wall",
+							"objectClass": "spr_tetromino",
 							"sid": 857079446367242,
 							"parameters": {
 								"object": "tm_collisions"
@@ -544,17 +400,17 @@
 						},
 						{
 							"id": "on-collision-with-another-object",
-							"objectClass": "spr_bullet_wall",
+							"objectClass": "spr_tetromino",
 							"sid": 760642186764329,
 							"parameters": {
-								"object": "spr_bullet_wall"
+								"object": "spr_tetromino"
 							}
 						}
 					],
 					"actions": [
 						{
 							"id": "set-position",
-							"objectClass": "spr_bullet_wall",
+							"objectClass": "spr_tetromino",
 							"sid": 303678749268401,
 							"parameters": {
 								"x": "32 *  round(Self.X / 32)",
@@ -563,7 +419,7 @@
 						},
 						{
 							"id": "set-speed",
-							"objectClass": "spr_bullet_wall",
+							"objectClass": "spr_tetromino",
 							"sid": 333032992222593,
 							"behaviorType": "Bullet",
 							"parameters": {
@@ -573,6 +429,134 @@
 					],
 					"sid": 770916151249777,
 					"isOrBlock": true
+				},
+				{
+					"eventType": "block",
+					"conditions": [
+						{
+							"id": "every-tick",
+							"objectClass": "System",
+							"sid": 541232168747945
+						}
+					],
+					"actions": [
+						{
+							"id": "move-to-top",
+							"objectClass": "spr_preview_tetromino",
+							"sid": 841856396568340
+						}
+					],
+					"sid": 100430475787489,
+					"children": [
+						{
+							"eventType": "block",
+							"conditions": [
+								{
+									"id": "compare-instance-variable",
+									"objectClass": "spr_player",
+									"sid": 526260620512409,
+									"parameters": {
+										"instance-variable": "direction",
+										"comparison": 0,
+										"value": "\"up\""
+									}
+								}
+							],
+							"actions": [
+								{
+									"id": "set-position",
+									"objectClass": "spr_preview_tetromino",
+									"sid": 964692327938072,
+									"parameters": {
+										"x": "32 * round((spr_player.X - Self.Width / 2) / 32)",
+										"y": "32 * ceil((spr_player.Y - spr_player.Height - Self.Height) / 32)"
+									}
+								}
+							],
+							"sid": 715899834338105
+						},
+						{
+							"eventType": "block",
+							"conditions": [
+								{
+									"id": "compare-instance-variable",
+									"objectClass": "spr_player",
+									"sid": 571358062528955,
+									"parameters": {
+										"instance-variable": "direction",
+										"comparison": 0,
+										"value": "\"left\""
+									}
+								}
+							],
+							"actions": [
+								{
+									"id": "set-position",
+									"objectClass": "spr_preview_tetromino",
+									"sid": 782054067923106,
+									"parameters": {
+										"x": "32 * ceil((spr_player.X - spr_player.Width - Self.Width) / 32)",
+										"y": "32 * round((spr_player.Y - Self.Height / 2) / 32)"
+									}
+								}
+							],
+							"sid": 771726245077278
+						},
+						{
+							"eventType": "block",
+							"conditions": [
+								{
+									"id": "compare-instance-variable",
+									"objectClass": "spr_player",
+									"sid": 928772518411948,
+									"parameters": {
+										"instance-variable": "direction",
+										"comparison": 0,
+										"value": "\"down\""
+									}
+								}
+							],
+							"actions": [
+								{
+									"id": "set-position",
+									"objectClass": "spr_preview_tetromino",
+									"sid": 565994852833283,
+									"parameters": {
+										"x": "32 * round((spr_player.X - Self.Width / 2) / 32)",
+										"y": "32 * floor((spr_player.Y + spr_player.Height) / 32)"
+									}
+								}
+							],
+							"sid": 864580581044846
+						},
+						{
+							"eventType": "block",
+							"conditions": [
+								{
+									"id": "compare-instance-variable",
+									"objectClass": "spr_player",
+									"sid": 261919615207744,
+									"parameters": {
+										"instance-variable": "direction",
+										"comparison": 0,
+										"value": "\"right\""
+									}
+								}
+							],
+							"actions": [
+								{
+									"id": "set-position",
+									"objectClass": "spr_preview_tetromino",
+									"sid": 504675546559376,
+									"parameters": {
+										"x": "32 * floor((spr_player.X + spr_player.Width) / 32)",
+										"y": "32 * round((spr_player.Y  - Self.Height / 2) / 32)"
+									}
+								}
+							],
+							"sid": 712023656153982
+						}
+					]
 				}
 			],
 			"sid": 431708990504645
@@ -608,6 +592,74 @@
 				}
 			],
 			"sid": 568479796440330
+		},
+		{
+			"eventType": "group",
+			"disabled": false,
+			"title": "ePlayer/Animations",
+			"description": "",
+			"isActiveOnStart": true,
+			"children": [
+				{
+					"eventType": "block",
+					"conditions": [
+						{
+							"id": "is-overlapping-another-object",
+							"objectClass": "spr_preview_tetromino",
+							"sid": 125613961922430,
+							"parameters": {
+								"object": "tm_collisions"
+							}
+						},
+						{
+							"id": "is-overlapping-another-object",
+							"objectClass": "spr_preview_tetromino",
+							"sid": 833224878563349,
+							"parameters": {
+								"object": "spr_tetromino"
+							}
+						}
+					],
+					"actions": [
+						{
+							"id": "set-effect-parameter",
+							"objectClass": "spr_preview_tetromino",
+							"sid": 786138699776181,
+							"parameters": {
+								"effect": "\"ReplaceColor\"",
+								"parameter-index": "2",
+								"value": "1"
+							}
+						}
+					],
+					"sid": 172862923803314,
+					"isOrBlock": true
+				},
+				{
+					"eventType": "block",
+					"conditions": [
+						{
+							"id": "else",
+							"objectClass": "System",
+							"sid": 109609745060897
+						}
+					],
+					"actions": [
+						{
+							"id": "set-effect-parameter",
+							"objectClass": "spr_preview_tetromino",
+							"sid": 557701264323099,
+							"parameters": {
+								"effect": "\"ReplaceColor\"",
+								"parameter-index": "2",
+								"value": "0"
+							}
+						}
+					],
+					"sid": 650894430766253
+				}
+			],
+			"sid": 905875040656206
 		}
 	],
 	"sid": 177573190643701
