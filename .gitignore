@@ -1,0 +1,6 @@
+# UI State
+*.uistate.json
+# Backup files
+*.capx.autosave
+*.capx.backup1
+project.uistate.json
