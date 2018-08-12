@@ -9,134 +9,263 @@
 			"isActiveOnStart": true,
 			"children": [
 				{
-					"eventType": "block",
-					"conditions": [
+					"eventType": "group",
+					"disabled": false,
+					"title": "ePlayer/Input/Keyboard",
+					"description": "",
+					"isActiveOnStart": true,
+					"children": [
 						{
-							"id": "on-key-pressed",
-							"objectClass": "Keyboard",
-							"sid": 964565184534731,
-							"parameters": {
-								"key": 38
-							}
+							"eventType": "block",
+							"conditions": [
+								{
+									"id": "key-is-down",
+									"objectClass": "Keyboard",
+									"sid": 793428053191429,
+									"parameters": {
+										"key": 87
+									}
+								}
+							],
+							"actions": [
+								{
+									"id": "send-event",
+									"objectClass": "EventTrigger",
+									"sid": 695115560837319,
+									"parameters": {
+										"event-name": "\"direction\"",
+										"event-message": "\"up\"",
+										"event-messages-additional": []
+									}
+								}
+							],
+							"sid": 176264248802046
+						},
+						{
+							"eventType": "block",
+							"conditions": [
+								{
+									"id": "key-is-down",
+									"objectClass": "Keyboard",
+									"sid": 868758571669197,
+									"parameters": {
+										"key": 65
+									}
+								}
+							],
+							"actions": [
+								{
+									"id": "send-event",
+									"objectClass": "EventTrigger",
+									"sid": 869051083989855,
+									"parameters": {
+										"event-name": "\"direction\"",
+										"event-message": "\"left\"",
+										"event-messages-additional": []
+									}
+								}
+							],
+							"sid": 150004244159016
+						},
+						{
+							"eventType": "block",
+							"conditions": [
+								{
+									"id": "key-is-down",
+									"objectClass": "Keyboard",
+									"sid": 204891516774653,
+									"parameters": {
+										"key": 83
+									}
+								}
+							],
+							"actions": [
+								{
+									"id": "send-event",
+									"objectClass": "EventTrigger",
+									"sid": 625231512711637,
+									"parameters": {
+										"event-name": "\"direction\"",
+										"event-message": "\"down\"",
+										"event-messages-additional": []
+									}
+								}
+							],
+							"sid": 528906469441745
+						},
+						{
+							"eventType": "block",
+							"conditions": [
+								{
+									"id": "key-is-down",
+									"objectClass": "Keyboard",
+									"sid": 852292002630691,
+									"parameters": {
+										"key": 68
+									}
+								}
+							],
+							"actions": [
+								{
+									"id": "send-event",
+									"objectClass": "EventTrigger",
+									"sid": 251222883799974,
+									"parameters": {
+										"event-name": "\"direction\"",
+										"event-message": "\"right\"",
+										"event-messages-additional": []
+									}
+								}
+							],
+							"sid": 140745256095526
 						}
 					],
-					"actions": [
-						{
-							"id": "send-event",
-							"objectClass": "EventTrigger",
-							"sid": 146411033674036,
-							"parameters": {
-								"event-name": "\"direction\"",
-								"event-message": "\"up\"",
-								"event-messages-additional": []
-							}
-						}
-					],
-					"sid": 285873201206913
+					"sid": 874452905438135
 				},
 				{
-					"eventType": "block",
-					"conditions": [
+					"eventType": "group",
+					"disabled": false,
+					"title": "ePlayer/Input/Mouse",
+					"description": "",
+					"isActiveOnStart": true,
+					"children": [
 						{
-							"id": "on-key-pressed",
-							"objectClass": "Keyboard",
-							"sid": 893801337015042,
-							"parameters": {
-								"key": 37
-							}
+							"eventType": "block",
+							"conditions": [
+								{
+									"id": "on-click",
+									"objectClass": "Mouse",
+									"sid": 937140034580669,
+									"parameters": {
+										"mouse-button": "left",
+										"click-type": "clicked"
+									}
+								}
+							],
+							"actions": [
+								{
+									"id": "send-event",
+									"objectClass": "EventTrigger",
+									"sid": 821007690169073,
+									"parameters": {
+										"event-name": "\"shoot\"",
+										"event-message": "0",
+										"event-messages-additional": []
+									}
+								}
+							],
+							"sid": 887962151998823
+						},
+						{
+							"eventType": "block",
+							"conditions": [
+								{
+									"id": "is-between-angles",
+									"objectClass": "System",
+									"sid": 322098336440342,
+									"parameters": {
+										"angle": "angle(spr_player.X, spr_player.Y, Mouse.X, Mouse.Y)",
+										"first-angle": "225",
+										"second-angle": "315"
+									}
+								}
+							],
+							"actions": [
+								{
+									"id": "set-instvar-value",
+									"objectClass": "spr_player",
+									"sid": 605428645469966,
+									"parameters": {
+										"instance-variable": "direction",
+										"value": "\"up\""
+									}
+								}
+							],
+							"sid": 675935371140179
+						},
+						{
+							"eventType": "block",
+							"conditions": [
+								{
+									"id": "is-between-angles",
+									"objectClass": "System",
+									"sid": 321398095927296,
+									"parameters": {
+										"angle": "angle(spr_player.X, spr_player.Y, Mouse.X, Mouse.Y)",
+										"first-angle": "135",
+										"second-angle": "225"
+									}
+								}
+							],
+							"actions": [
+								{
+									"id": "set-instvar-value",
+									"objectClass": "spr_player",
+									"sid": 666912336140139,
+									"parameters": {
+										"instance-variable": "direction",
+										"value": "\"left\""
+									}
+								}
+							],
+							"sid": 921639030298745
+						},
+						{
+							"eventType": "block",
+							"conditions": [
+								{
+									"id": "is-between-angles",
+									"objectClass": "System",
+									"sid": 214866183149058,
+									"parameters": {
+										"angle": "angle(spr_player.X, spr_player.Y, Mouse.X, Mouse.Y)",
+										"first-angle": "45",
+										"second-angle": "135"
+									}
+								}
+							],
+							"actions": [
+								{
+									"id": "set-instvar-value",
+									"objectClass": "spr_player",
+									"sid": 547058498147966,
+									"parameters": {
+										"instance-variable": "direction",
+										"value": "\"down\""
+									}
+								}
+							],
+							"sid": 258029456721392
+						},
+						{
+							"eventType": "block",
+							"conditions": [
+								{
+									"id": "is-between-angles",
+									"objectClass": "System",
+									"sid": 659630942417800,
+									"parameters": {
+										"angle": "angle(spr_player.X, spr_player.Y, Mouse.X, Mouse.Y)",
+										"first-angle": "-45",
+										"second-angle": "45"
+									}
+								}
+							],
+							"actions": [
+								{
+									"id": "set-instvar-value",
+									"objectClass": "spr_player",
+									"sid": 504322892179000,
+									"parameters": {
+										"instance-variable": "direction",
+										"value": "\"right\""
+									}
+								}
+							],
+							"sid": 541966061294986
 						}
 					],
-					"actions": [
-						{
-							"id": "send-event",
-							"objectClass": "EventTrigger",
-							"sid": 946067616852476,
-							"parameters": {
-								"event-name": "\"direction\"",
-								"event-message": "\"left\"",
-								"event-messages-additional": []
-							}
-						}
-					],
-					"sid": 191535257770643
-				},
-				{
-					"eventType": "block",
-					"conditions": [
-						{
-							"id": "on-key-pressed",
-							"objectClass": "Keyboard",
-							"sid": 761914886683317,
-							"parameters": {
-								"key": 40
-							}
-						}
-					],
-					"actions": [
-						{
-							"id": "send-event",
-							"objectClass": "EventTrigger",
-							"sid": 155369549005804,
-							"parameters": {
-								"event-name": "\"direction\"",
-								"event-message": "\"down\"",
-								"event-messages-additional": []
-							}
-						}
-					],
-					"sid": 467374391777992
-				},
-				{
-					"eventType": "block",
-					"conditions": [
-						{
-							"id": "on-key-pressed",
-							"objectClass": "Keyboard",
-							"sid": 234462502372245,
-							"parameters": {
-								"key": 39
-							}
-						}
-					],
-					"actions": [
-						{
-							"id": "send-event",
-							"objectClass": "EventTrigger",
-							"sid": 278227961038289,
-							"parameters": {
-								"event-name": "\"direction\"",
-								"event-message": "\"right\"",
-								"event-messages-additional": []
-							}
-						}
-					],
-					"sid": 216526827279718
-				},
-				{
-					"eventType": "block",
-					"conditions": [
-						{
-							"id": "on-key-pressed",
-							"objectClass": "Keyboard",
-							"sid": 307583656092669,
-							"parameters": {
-								"key": 32
-							}
-						}
-					],
-					"actions": [
-						{
-							"id": "send-event",
-							"objectClass": "EventTrigger",
-							"sid": 192905532268573,
-							"parameters": {
-								"event-name": "\"shoot\"",
-								"event-message": "0",
-								"event-messages-additional": []
-							}
-						}
-					],
-					"sid": 867479133637893
+					"sid": 311094351880372
 				}
 			],
 			"sid": 410123507614538
@@ -149,29 +278,348 @@
 			"isActiveOnStart": true,
 			"children": [
 				{
-					"eventType": "block",
-					"conditions": [
+					"eventType": "group",
+					"disabled": false,
+					"title": "ePlayer/Gameplay/Movement",
+					"description": "",
+					"isActiveOnStart": true,
+					"children": [
 						{
-							"id": "event-triggered",
-							"objectClass": "EventTrigger",
-							"sid": 985408879451394,
-							"parameters": {
-								"event-respond-to": "\"direction\""
-							}
+							"eventType": "block",
+							"conditions": [
+								{
+									"id": "event-triggered",
+									"objectClass": "EventTrigger",
+									"sid": 977391122722146,
+									"parameters": {
+										"event-respond-to": "\"direction\""
+									}
+								}
+							],
+							"actions": [],
+							"sid": 621124031886986,
+							"children": [
+								{
+									"eventType": "block",
+									"conditions": [
+										{
+											"id": "compare-two-values",
+											"objectClass": "System",
+											"sid": 251061425838411,
+											"parameters": {
+												"first-value": "EventTrigger.GetEventMessageAt(0)",
+												"comparison": 0,
+												"second-value": "\"up\""
+											}
+										}
+									],
+									"actions": [
+										{
+											"id": "simulate-control",
+											"objectClass": "spr_player",
+											"sid": 451824011744177,
+											"behaviorType": "8Direction",
+											"parameters": {
+												"control": "up"
+											}
+										}
+									],
+									"sid": 908983373492846
+								},
+								{
+									"eventType": "block",
+									"conditions": [
+										{
+											"id": "compare-two-values",
+											"objectClass": "System",
+											"sid": 712306109963864,
+											"parameters": {
+												"first-value": "EventTrigger.GetEventMessageAt(0)",
+												"comparison": 0,
+												"second-value": "\"left\""
+											}
+										}
+									],
+									"actions": [
+										{
+											"id": "simulate-control",
+											"objectClass": "spr_player",
+											"sid": 283905017754841,
+											"behaviorType": "8Direction",
+											"parameters": {
+												"control": "left"
+											}
+										}
+									],
+									"sid": 186741572442721
+								},
+								{
+									"eventType": "block",
+									"conditions": [
+										{
+											"id": "compare-two-values",
+											"objectClass": "System",
+											"sid": 161985369981740,
+											"parameters": {
+												"first-value": "EventTrigger.GetEventMessageAt(0)",
+												"comparison": 0,
+												"second-value": "\"down\""
+											}
+										}
+									],
+									"actions": [
+										{
+											"id": "simulate-control",
+											"objectClass": "spr_player",
+											"sid": 561458215254629,
+											"behaviorType": "8Direction",
+											"parameters": {
+												"control": "down"
+											}
+										}
+									],
+									"sid": 586745332046545
+								},
+								{
+									"eventType": "block",
+									"conditions": [
+										{
+											"id": "compare-two-values",
+											"objectClass": "System",
+											"sid": 385475449318526,
+											"parameters": {
+												"first-value": "EventTrigger.GetEventMessageAt(0)",
+												"comparison": 0,
+												"second-value": "\"right\""
+											}
+										}
+									],
+									"actions": [
+										{
+											"id": "simulate-control",
+											"objectClass": "spr_player",
+											"sid": 534577945744765,
+											"behaviorType": "8Direction",
+											"parameters": {
+												"control": "right"
+											}
+										}
+									],
+									"sid": 828980758121159
+								}
+							]
 						}
 					],
-					"actions": [
+					"sid": 321147101568482
+				},
+				{
+					"eventType": "group",
+					"disabled": false,
+					"title": "ePlayer/Gameplay/Recticle",
+					"description": "",
+					"isActiveOnStart": true,
+					"children": [
 						{
-							"id": "set-instvar-value",
-							"objectClass": "spr_player",
-							"sid": 369324590901469,
-							"parameters": {
-								"instance-variable": "direction",
-								"value": "EventTrigger.GetEventMessageAt(0)"
-							}
+							"eventType": "block",
+							"conditions": [
+								{
+									"id": "every-tick",
+									"objectClass": "System",
+									"sid": 799473914799139
+								}
+							],
+							"actions": [
+								{
+									"id": "move-to-top",
+									"objectClass": "spr_preview_tetromino",
+									"sid": 603309110115577
+								},
+								{
+									"id": "move-to-top",
+									"objectClass": "spr_arrow",
+									"sid": 858725979977990
+								}
+							],
+							"sid": 450821619701552
+						},
+						{
+							"eventType": "block",
+							"conditions": [
+								{
+									"id": "compare-instance-variable",
+									"objectClass": "spr_player",
+									"sid": 930568764298663,
+									"parameters": {
+										"instance-variable": "direction",
+										"comparison": 0,
+										"value": "\"up\""
+									}
+								}
+							],
+							"actions": [
+								{
+									"id": "set-position",
+									"objectClass": "spr_preview_tetromino",
+									"sid": 410021718897157,
+									"parameters": {
+										"x": "32 * round((spr_player.X - Self.Width / 2) / 32)",
+										"y": "32 * ceil((spr_player.Y - spr_player.Height - Self.Height) / 32)"
+									}
+								},
+								{
+									"id": "set-angle",
+									"objectClass": "spr_arrow",
+									"sid": 292431996804091,
+									"parameters": {
+										"angle": "270"
+									}
+								},
+								{
+									"id": "set-position",
+									"objectClass": "spr_arrow",
+									"sid": 673426428933279,
+									"parameters": {
+										"x": "spr_player.X ",
+										"y": "spr_player.Y - spr_player.Height - spr_preview_tetromino.Height"
+									}
+								}
+							],
+							"sid": 158000086313670
+						},
+						{
+							"eventType": "block",
+							"conditions": [
+								{
+									"id": "compare-instance-variable",
+									"objectClass": "spr_player",
+									"sid": 505991746250585,
+									"parameters": {
+										"instance-variable": "direction",
+										"comparison": 0,
+										"value": "\"left\""
+									}
+								}
+							],
+							"actions": [
+								{
+									"id": "set-position",
+									"objectClass": "spr_preview_tetromino",
+									"sid": 304540718932462,
+									"parameters": {
+										"x": "32 * ceil((spr_player.X - spr_player.Width - Self.Width) / 32)",
+										"y": "32 * round((spr_player.Y - Self.Height / 2) / 32)"
+									}
+								},
+								{
+									"id": "set-angle",
+									"objectClass": "spr_arrow",
+									"sid": 963599157619613,
+									"parameters": {
+										"angle": "180"
+									}
+								},
+								{
+									"id": "set-position",
+									"objectClass": "spr_arrow",
+									"sid": 601445203734299,
+									"parameters": {
+										"x": "spr_player.X - spr_player.Width - spr_preview_tetromino.Width",
+										"y": "spr_player.Y"
+									}
+								}
+							],
+							"sid": 225718628658478
+						},
+						{
+							"eventType": "block",
+							"conditions": [
+								{
+									"id": "compare-instance-variable",
+									"objectClass": "spr_player",
+									"sid": 772649601406699,
+									"parameters": {
+										"instance-variable": "direction",
+										"comparison": 0,
+										"value": "\"down\""
+									}
+								}
+							],
+							"actions": [
+								{
+									"id": "set-position",
+									"objectClass": "spr_preview_tetromino",
+									"sid": 849891075779493,
+									"parameters": {
+										"x": "32 * round((spr_player.X - Self.Width / 2) / 32)",
+										"y": "32 * floor((spr_player.Y + spr_player.Height) / 32)"
+									}
+								},
+								{
+									"id": "set-angle",
+									"objectClass": "spr_arrow",
+									"sid": 514743442300958,
+									"parameters": {
+										"angle": "90"
+									}
+								},
+								{
+									"id": "set-position",
+									"objectClass": "spr_arrow",
+									"sid": 866970216242095,
+									"parameters": {
+										"x": "spr_player.X ",
+										"y": "spr_player.Y + spr_player.Height + spr_preview_tetromino.Height"
+									}
+								}
+							],
+							"sid": 230261085289411
+						},
+						{
+							"eventType": "block",
+							"conditions": [
+								{
+									"id": "compare-instance-variable",
+									"objectClass": "spr_player",
+									"sid": 540631788549645,
+									"parameters": {
+										"instance-variable": "direction",
+										"comparison": 0,
+										"value": "\"right\""
+									}
+								}
+							],
+							"actions": [
+								{
+									"id": "set-position",
+									"objectClass": "spr_preview_tetromino",
+									"sid": 174469722828726,
+									"parameters": {
+										"x": "32 * floor((spr_player.X + spr_player.Width) / 32)",
+										"y": "32 * round((spr_player.Y  - Self.Height / 2) / 32)"
+									}
+								},
+								{
+									"id": "set-angle",
+									"objectClass": "spr_arrow",
+									"sid": 743117388174425,
+									"parameters": {
+										"angle": "0"
+									}
+								},
+								{
+									"id": "set-position",
+									"objectClass": "spr_arrow",
+									"sid": 832297265736997,
+									"parameters": {
+										"x": "spr_player.X + spr_player.Width + spr_preview_tetromino.Width",
+										"y": "spr_player.Y"
+									}
+								}
+							],
+							"sid": 317159348255595
 						}
 					],
-					"sid": 978250146609720
+					"sid": 495933362204119
 				},
 				{
 					"eventType": "block",
@@ -229,7 +677,7 @@
 										{
 											"id": "compare-instance-variable",
 											"objectClass": "spr_player",
-											"sid": 475465569339383,
+											"sid": 866900243134269,
 											"parameters": {
 												"instance-variable": "direction",
 												"comparison": 0,
@@ -256,7 +704,7 @@
 										{
 											"id": "compare-instance-variable",
 											"objectClass": "spr_player",
-											"sid": 999473153285357,
+											"sid": 354224380023797,
 											"parameters": {
 												"instance-variable": "direction",
 												"comparison": 0,
@@ -283,7 +731,7 @@
 										{
 											"id": "compare-instance-variable",
 											"objectClass": "spr_player",
-											"sid": 935095854210663,
+											"sid": 430177477974286,
 											"parameters": {
 												"instance-variable": "direction",
 												"comparison": 0,
@@ -310,7 +758,7 @@
 										{
 											"id": "compare-instance-variable",
 											"objectClass": "spr_player",
-											"sid": 585784730201032,
+											"sid": 241939263905851,
 											"parameters": {
 												"instance-variable": "direction",
 												"comparison": 0,
@@ -456,134 +904,6 @@
 					],
 					"sid": 770916151249777,
 					"isOrBlock": true
-				},
-				{
-					"eventType": "block",
-					"conditions": [
-						{
-							"id": "every-tick",
-							"objectClass": "System",
-							"sid": 541232168747945
-						}
-					],
-					"actions": [
-						{
-							"id": "move-to-top",
-							"objectClass": "spr_preview_tetromino",
-							"sid": 841856396568340
-						}
-					],
-					"sid": 100430475787489,
-					"children": [
-						{
-							"eventType": "block",
-							"conditions": [
-								{
-									"id": "compare-instance-variable",
-									"objectClass": "spr_player",
-									"sid": 526260620512409,
-									"parameters": {
-										"instance-variable": "direction",
-										"comparison": 0,
-										"value": "\"up\""
-									}
-								}
-							],
-							"actions": [
-								{
-									"id": "set-position",
-									"objectClass": "spr_preview_tetromino",
-									"sid": 964692327938072,
-									"parameters": {
-										"x": "32 * round((spr_player.X - Self.Width / 2) / 32)",
-										"y": "32 * ceil((spr_player.Y - spr_player.Height - Self.Height) / 32)"
-									}
-								}
-							],
-							"sid": 715899834338105
-						},
-						{
-							"eventType": "block",
-							"conditions": [
-								{
-									"id": "compare-instance-variable",
-									"objectClass": "spr_player",
-									"sid": 571358062528955,
-									"parameters": {
-										"instance-variable": "direction",
-										"comparison": 0,
-										"value": "\"left\""
-									}
-								}
-							],
-							"actions": [
-								{
-									"id": "set-position",
-									"objectClass": "spr_preview_tetromino",
-									"sid": 782054067923106,
-									"parameters": {
-										"x": "32 * ceil((spr_player.X - spr_player.Width - Self.Width) / 32)",
-										"y": "32 * round((spr_player.Y - Self.Height / 2) / 32)"
-									}
-								}
-							],
-							"sid": 771726245077278
-						},
-						{
-							"eventType": "block",
-							"conditions": [
-								{
-									"id": "compare-instance-variable",
-									"objectClass": "spr_player",
-									"sid": 928772518411948,
-									"parameters": {
-										"instance-variable": "direction",
-										"comparison": 0,
-										"value": "\"down\""
-									}
-								}
-							],
-							"actions": [
-								{
-									"id": "set-position",
-									"objectClass": "spr_preview_tetromino",
-									"sid": 565994852833283,
-									"parameters": {
-										"x": "32 * round((spr_player.X - Self.Width / 2) / 32)",
-										"y": "32 * floor((spr_player.Y + spr_player.Height) / 32)"
-									}
-								}
-							],
-							"sid": 864580581044846
-						},
-						{
-							"eventType": "block",
-							"conditions": [
-								{
-									"id": "compare-instance-variable",
-									"objectClass": "spr_player",
-									"sid": 261919615207744,
-									"parameters": {
-										"instance-variable": "direction",
-										"comparison": 0,
-										"value": "\"right\""
-									}
-								}
-							],
-							"actions": [
-								{
-									"id": "set-position",
-									"objectClass": "spr_preview_tetromino",
-									"sid": 504675546559376,
-									"parameters": {
-										"x": "32 * floor((spr_player.X + spr_player.Width) / 32)",
-										"y": "32 * round((spr_player.Y  - Self.Height / 2) / 32)"
-									}
-								}
-							],
-							"sid": 712023656153982
-						}
-					]
 				}
 			],
 			"sid": 431708990504645

@@ -4,6 +4,31 @@
 		{
 			"eventType": "include",
 			"includeSheet": "ePlayer"
+		},
+		{
+			"eventType": "include",
+			"includeSheet": "eEnemies"
+		},
+		{
+			"eventType": "block",
+			"conditions": [
+				{
+					"id": "on-start-of-layout",
+					"objectClass": "System",
+					"sid": 721508956654775
+				}
+			],
+			"actions": [
+				{
+					"id": "set-layout-scale",
+					"objectClass": "System",
+					"sid": 822488037449703,
+					"parameters": {
+						"scale": "0.65"
+					}
+				}
+			],
+			"sid": 272358451291571
 		}
 	],
 	"sid": 113748176136503

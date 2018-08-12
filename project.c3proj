@@ -121,7 +121,8 @@
 					"spr_player",
 					"spr_tetromino",
 					"spr_preview_tetromino",
-					"gui_next_tetromino"
+					"gui_next_tetromino",
+					"spr_arrow"
 				],
 				"subfolders": [],
 				"name": "Player"

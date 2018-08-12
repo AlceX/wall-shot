@@ -31,10 +31,10 @@
 					"ownData": {
 						"tilemapData": {
 							"width": 40,
-							"height": 30,
+							"height": 40,
 							"max-width": 40,
-							"max-height": 30,
-							"data": "62x1,26x0,4x1,26x0,4x1,26x0,4x1,26x0,4x1,26x0,4x1,13x0,5x1,8x0,4x1,13x0,5x1,8x0,4x1,26x0,4x1,21x0,2x1,3x0,4x1,21x0,2x1,3x0,4x1,5x0,2x1,14x0,2x1,3x0,4x1,5x0,2x1,14x0,2x1,3x0,4x1,5x0,2x1,14x0,2x1,3x0,4x1,5x0,2x1,14x0,2x1,3x0,4x1,5x0,2x1,10x0,2x1,2x0,2x1,3x0,4x1,5x0,2x1,10x0,2x1,7x0,4x1,5x0,2x1,10x0,2x1,7x0,4x1,5x0,2x1,10x0,2x1,7x0,4x1,17x0,2x1,7x0,4x1,14x0,5x1,7x0,4x1,14x0,5x1,7x0,4x1,26x0,4x1,4x0,6x1,16x0,4x1,4x0,6x1,16x0,4x1,4x0,2x1,20x0,4x1,4x0,2x1,20x0,4x1,4x0,2x1,20x0,4x1,4x0,2x1,8x0,2x1,10x0,4x1,14x0,2x1,10x0,4x1,14x0,2x1,10x0,4x1,14x0,2x1,10x0,4x1,14x0,2x1,10x0,4x1,14x0,2x1,10x0,4x1,14x0,2x1,10x0,4x1,26x0,4x1,26x0,62x1"
+							"max-height": 40,
+							"data": "82x1,36x0,4x1,36x0,4x1,36x0,4x1,36x0,4x1,36x0,4x1,4x0,7x1,14x0,7x1,4x0,4x1,4x0,7x1,14x0,7x1,4x0,4x1,4x0,2x1,24x0,2x1,4x0,4x1,4x0,2x1,24x0,2x1,4x0,4x1,4x0,2x1,24x0,2x1,4x0,4x1,4x0,2x1,24x0,2x1,4x0,4x1,4x0,2x1,24x0,2x1,4x0,4x1,4x0,2x1,24x0,2x1,4x0,4x1,13x0,10x1,13x0,4x1,13x0,10x1,13x0,4x1,13x0,10x1,13x0,4x1,13x0,10x1,13x0,4x1,13x0,10x1,13x0,4x1,13x0,10x1,13x0,4x1,13x0,10x1,13x0,4x1,13x0,10x1,13x0,4x1,13x0,10x1,13x0,4x1,13x0,10x1,13x0,4x1,36x0,4x1,36x0,4x1,36x0,4x1,4x0,2x1,24x0,2x1,4x0,4x1,4x0,2x1,24x0,2x1,4x0,4x1,4x0,2x1,24x0,2x1,4x0,4x1,4x0,2x1,24x0,2x1,4x0,4x1,4x0,2x1,24x0,2x1,4x0,4x1,4x0,7x1,13x0,8x1,4x0,4x1,4x0,7x1,13x0,8x1,4x0,4x1,36x0,4x1,36x0,4x1,36x0,82x1"
 						},
 						"tile-width": 32,
 						"tile-height": 32,
@@ -47,7 +47,7 @@
 						"x": 0,
 						"y": 0,
 						"width": 1280,
-						"height": 960,
+						"height": 1280,
 						"originX": 0,
 						"originY": 0,
 						"color": [
@@ -56,6 +56,34 @@
 							1,
 							1
 						]
+					}
+				},
+				{
+					"type": "spr_arrow",
+					"properties": {
+						"initially-visible": true,
+						"initial-animation": "Default",
+						"initial-frame": 0,
+						"enable-collisions": true,
+						"live-preview": false
+					},
+					"uid": 16,
+					"instanceVariables": {},
+					"behaviors": {},
+					"world": {
+						"x": 0,
+						"y": -96,
+						"width": 32,
+						"height": 32,
+						"originX": 0,
+						"originY": 0.5,
+						"color": [
+							1,
+							1,
+							1,
+							1
+						],
+						"angle": 0
 					}
 				}
 			],
@@ -108,7 +136,7 @@
 								"deceleration": 500,
 								"directions": "dir-8",
 								"set-angle": "no",
-								"default-controls": true,
+								"default-controls": false,
 								"enabled": true
 							}
 						}
@@ -640,7 +668,7 @@
 			"isTransparent": true,
 			"parallaxX": 0,
 			"parallaxY": 0,
-			"scaleRate": 1,
+			"scaleRate": 0,
 			"forceOwnTexture": false,
 			"useRenderCells": false,
 			"blendMode": "normal",
@@ -651,7 +679,7 @@
 	"nonworld-instances": [],
 	"effectTypes": [],
 	"width": 1280,
-	"height": 960,
+	"height": 1280,
 	"unboundedScrolling": false,
 	"eventSheet": "elLevel"
 }
