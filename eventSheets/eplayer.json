@@ -1254,23 +1254,62 @@
 					"eventType": "block",
 					"conditions": [
 						{
-							"id": "every-tick",
-							"objectClass": "System",
-							"sid": 746690337861911
+							"id": "is-moving",
+							"objectClass": "obj_player",
+							"sid": 665372460940721,
+							"behaviorType": "8Direction"
 						}
 					],
 					"actions": [
 						{
+							"id": "wait",
+							"objectClass": "System",
+							"sid": 328039730821033,
+							"parameters": {
+								"seconds": "0"
+							}
+						},
+						{
 							"id": "set-position",
 							"objectClass": "obj_camera",
-							"sid": 815418732309062,
+							"sid": 474842759515737,
 							"parameters": {
-								"x": "lerp(obj_player.X, Mouse.X, 0.3)",
-								"y": "lerp(obj_player.Y, Mouse.Y, 0.3)"
+								"x": "lerp(obj_player.X, obj_player.X + obj_player.8Direction.VectorX / 4, 0.5)",
+								"y": "lerp(obj_player.Y, obj_player.Y + obj_player.8Direction.VectorY / 4, 0.5)"
 							}
 						}
 					],
-					"sid": 388065454807342
+					"sid": 540594533549510
+				},
+				{
+					"eventType": "block",
+					"conditions": [
+						{
+							"id": "else",
+							"objectClass": "System",
+							"sid": 677444668741071
+						}
+					],
+					"actions": [
+						{
+							"id": "wait",
+							"objectClass": "System",
+							"sid": 395578659891414,
+							"parameters": {
+								"seconds": "0"
+							}
+						},
+						{
+							"id": "set-position",
+							"objectClass": "obj_camera",
+							"sid": 184539334931179,
+							"parameters": {
+								"x": "lerp(obj_player.X, Self.X, 0.5)",
+								"y": "lerp(obj_player.Y, Self.Y, 0.5)"
+							}
+						}
+					],
+					"sid": 396770478638013
 				}
 			],
 			"sid": 568479796440330
