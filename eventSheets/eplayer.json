@@ -346,12 +346,39 @@
 											}
 										},
 										{
+											"id": "set-animation",
+											"objectClass": "spr_tetromino",
+											"sid": 984967296572394,
+											"parameters": {
+												"animation": "spr_preview_tetromino.AnimationName",
+												"from": "beginning"
+											}
+										},
+										{
 											"id": "set-angle-of-motion",
 											"objectClass": "spr_tetromino",
 											"sid": 255224280017540,
 											"behaviorType": "Bullet",
 											"parameters": {
 												"angle": "direction"
+											}
+										},
+										{
+											"id": "set-animation",
+											"objectClass": "spr_preview_tetromino",
+											"sid": 341904781140677,
+											"parameters": {
+												"animation": "gui_next_tetromino.AnimationName",
+												"from": "beginning"
+											}
+										},
+										{
+											"id": "set-animation",
+											"objectClass": "gui_next_tetromino",
+											"sid": 609431880365983,
+											"parameters": {
+												"animation": "choose(\"I\", \"L\", \"O\", \"S\", \"T\")",
+												"from": "beginning"
 											}
 										}
 									],

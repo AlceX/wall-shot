@@ -120,7 +120,8 @@
 					"obj_camera",
 					"spr_player",
 					"spr_tetromino",
-					"spr_preview_tetromino"
+					"spr_preview_tetromino",
+					"gui_next_tetromino"
 				],
 				"subfolders": [],
 				"name": "Player"
