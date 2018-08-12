@@ -118,6 +118,58 @@
 								}
 							],
 							"sid": 140745256095526
+						},
+						{
+							"eventType": "block",
+							"conditions": [
+								{
+									"id": "on-key-pressed",
+									"objectClass": "Keyboard",
+									"sid": 997226987274154,
+									"parameters": {
+										"key": 81
+									}
+								}
+							],
+							"actions": [
+								{
+									"id": "send-event",
+									"objectClass": "EventTrigger",
+									"sid": 757360799995856,
+									"parameters": {
+										"event-name": "\"rotate\"",
+										"event-message": "\"counter clockwise\"",
+										"event-messages-additional": []
+									}
+								}
+							],
+							"sid": 803440266947841
+						},
+						{
+							"eventType": "block",
+							"conditions": [
+								{
+									"id": "on-key-pressed",
+									"objectClass": "Keyboard",
+									"sid": 592602116962643,
+									"parameters": {
+										"key": 69
+									}
+								}
+							],
+							"actions": [
+								{
+									"id": "send-event",
+									"objectClass": "EventTrigger",
+									"sid": 810812644462802,
+									"parameters": {
+										"event-name": "\"rotate\"",
+										"event-message": "\"clockwise\"",
+										"event-messages-additional": []
+									}
+								}
+							],
+							"sid": 627147159449796
 						}
 					],
 					"sid": 874452905438135
@@ -423,6 +475,75 @@
 							"eventType": "block",
 							"conditions": [
 								{
+									"id": "event-triggered",
+									"objectClass": "EventTrigger",
+									"sid": 563586619551155,
+									"parameters": {
+										"event-respond-to": "\"rotate\""
+									}
+								}
+							],
+							"actions": [],
+							"sid": 169170497687723,
+							"children": [
+								{
+									"eventType": "block",
+									"conditions": [
+										{
+											"id": "compare-two-values",
+											"objectClass": "System",
+											"sid": 835429021142754,
+											"parameters": {
+												"first-value": "EventTrigger.GetEventMessageAt(0)",
+												"comparison": 0,
+												"second-value": "\"counter clockwise\""
+											}
+										}
+									],
+									"actions": [
+										{
+											"id": "rotate-counter-clockwise",
+											"objectClass": "spr_preview_tetromino",
+											"sid": 879984124337943,
+											"parameters": {
+												"degrees": "90"
+											}
+										}
+									],
+									"sid": 608106428814670
+								},
+								{
+									"eventType": "block",
+									"conditions": [
+										{
+											"id": "compare-two-values",
+											"objectClass": "System",
+											"sid": 159942247054871,
+											"parameters": {
+												"first-value": "EventTrigger.GetEventMessageAt(0)",
+												"comparison": 0,
+												"second-value": "\"clockwise\""
+											}
+										}
+									],
+									"actions": [
+										{
+											"id": "rotate-clockwise",
+											"objectClass": "spr_preview_tetromino",
+											"sid": 710492581566989,
+											"parameters": {
+												"degrees": "90"
+											}
+										}
+									],
+									"sid": 226451831957118
+								}
+							]
+						},
+						{
+							"eventType": "block",
+							"conditions": [
+								{
 									"id": "every-tick",
 									"objectClass": "System",
 									"sid": 799473914799139
@@ -456,35 +577,52 @@
 									}
 								}
 							],
-							"actions": [
+							"actions": [],
+							"sid": 158000086313670,
+							"children": [
 								{
-									"id": "set-position",
-									"objectClass": "spr_preview_tetromino",
-									"sid": 410021718897157,
-									"parameters": {
-										"x": "32 * round((spr_player.X - Self.Width / 2) / 32)",
-										"y": "32 * ceil((spr_player.Y - spr_player.Height - Self.Height) / 32)"
-									}
-								},
-								{
-									"id": "set-angle",
-									"objectClass": "spr_arrow",
-									"sid": 292431996804091,
-									"parameters": {
-										"angle": "270"
-									}
-								},
-								{
-									"id": "set-position",
-									"objectClass": "spr_arrow",
-									"sid": 673426428933279,
-									"parameters": {
-										"x": "spr_player.X ",
-										"y": "spr_player.Y - spr_player.Height - spr_preview_tetromino.Height"
-									}
+									"eventType": "block",
+									"conditions": [],
+									"actions": [
+										{
+											"id": "set-position",
+											"objectClass": "spr_preview_tetromino",
+											"sid": 477942399118917,
+											"parameters": {
+												"x": "32 * round((spr_player.X - Self.Width / 2) / 32)",
+												"y": "32 * ceil((spr_player.Y - spr_player.Height - Self.Height) / 32)"
+											}
+										},
+										{
+											"id": "call-function",
+											"objectClass": "Function",
+											"sid": 371907299153838,
+											"parameters": {
+												"name": "\"ePlayer/Gameplay/Recticle.adjust_angle\"",
+												"parameter-n": []
+											}
+										},
+										{
+											"id": "set-angle",
+											"objectClass": "spr_arrow",
+											"sid": 348064298927429,
+											"parameters": {
+												"angle": "270"
+											}
+										},
+										{
+											"id": "set-position",
+											"objectClass": "spr_arrow",
+											"sid": 827032671509026,
+											"parameters": {
+												"x": "spr_player.X ",
+												"y": "spr_player.Y - spr_player.Height - spr_preview_tetromino.Height"
+											}
+										}
+									],
+									"sid": 276937191506110
 								}
-							],
-							"sid": 158000086313670
+							]
 						},
 						{
 							"eventType": "block",
@@ -500,35 +638,52 @@
 									}
 								}
 							],
-							"actions": [
+							"actions": [],
+							"sid": 225718628658478,
+							"children": [
 								{
-									"id": "set-position",
-									"objectClass": "spr_preview_tetromino",
-									"sid": 304540718932462,
-									"parameters": {
-										"x": "32 * ceil((spr_player.X - spr_player.Width - Self.Width) / 32)",
-										"y": "32 * round((spr_player.Y - Self.Height / 2) / 32)"
-									}
-								},
-								{
-									"id": "set-angle",
-									"objectClass": "spr_arrow",
-									"sid": 963599157619613,
-									"parameters": {
-										"angle": "180"
-									}
-								},
-								{
-									"id": "set-position",
-									"objectClass": "spr_arrow",
-									"sid": 601445203734299,
-									"parameters": {
-										"x": "spr_player.X - spr_player.Width - spr_preview_tetromino.Width",
-										"y": "spr_player.Y"
-									}
+									"eventType": "block",
+									"conditions": [],
+									"actions": [
+										{
+											"id": "set-position",
+											"objectClass": "spr_preview_tetromino",
+											"sid": 196514132769637,
+											"parameters": {
+												"x": "32 * ceil((spr_player.X - spr_player.Width - Self.Width) / 32)",
+												"y": "32 * round((spr_player.Y - Self.Height / 2) / 32)"
+											}
+										},
+										{
+											"id": "call-function",
+											"objectClass": "Function",
+											"sid": 599526266126822,
+											"parameters": {
+												"name": "\"ePlayer/Gameplay/Recticle.adjust_angle\"",
+												"parameter-n": []
+											}
+										},
+										{
+											"id": "set-angle",
+											"objectClass": "spr_arrow",
+											"sid": 867924854841814,
+											"parameters": {
+												"angle": "180"
+											}
+										},
+										{
+											"id": "set-position",
+											"objectClass": "spr_arrow",
+											"sid": 529479611363908,
+											"parameters": {
+												"x": "spr_player.X - spr_player.Width - spr_preview_tetromino.Width",
+												"y": "spr_player.Y"
+											}
+										}
+									],
+									"sid": 530450523937400
 								}
-							],
-							"sid": 225718628658478
+							]
 						},
 						{
 							"eventType": "block",
@@ -544,35 +699,52 @@
 									}
 								}
 							],
-							"actions": [
+							"actions": [],
+							"sid": 230261085289411,
+							"children": [
 								{
-									"id": "set-position",
-									"objectClass": "spr_preview_tetromino",
-									"sid": 849891075779493,
-									"parameters": {
-										"x": "32 * round((spr_player.X - Self.Width / 2) / 32)",
-										"y": "32 * floor((spr_player.Y + spr_player.Height) / 32)"
-									}
-								},
-								{
-									"id": "set-angle",
-									"objectClass": "spr_arrow",
-									"sid": 514743442300958,
-									"parameters": {
-										"angle": "90"
-									}
-								},
-								{
-									"id": "set-position",
-									"objectClass": "spr_arrow",
-									"sid": 866970216242095,
-									"parameters": {
-										"x": "spr_player.X ",
-										"y": "spr_player.Y + spr_player.Height + spr_preview_tetromino.Height"
-									}
+									"eventType": "block",
+									"conditions": [],
+									"actions": [
+										{
+											"id": "set-position",
+											"objectClass": "spr_preview_tetromino",
+											"sid": 457420146954414,
+											"parameters": {
+												"x": "32 * round((spr_player.X - Self.Width / 2) / 32)",
+												"y": "32 * floor((spr_player.Y + spr_player.Height) / 32)"
+											}
+										},
+										{
+											"id": "call-function",
+											"objectClass": "Function",
+											"sid": 614845210505851,
+											"parameters": {
+												"name": "\"ePlayer/Gameplay/Recticle.adjust_angle\"",
+												"parameter-n": []
+											}
+										},
+										{
+											"id": "set-angle",
+											"objectClass": "spr_arrow",
+											"sid": 714894200447290,
+											"parameters": {
+												"angle": "90"
+											}
+										},
+										{
+											"id": "set-position",
+											"objectClass": "spr_arrow",
+											"sid": 517012367144795,
+											"parameters": {
+												"x": "spr_player.X ",
+												"y": "spr_player.Y + spr_player.Height + spr_preview_tetromino.Height"
+											}
+										}
+									],
+									"sid": 847752813152804
 								}
-							],
-							"sid": 230261085289411
+							]
 						},
 						{
 							"eventType": "block",
@@ -588,35 +760,147 @@
 									}
 								}
 							],
-							"actions": [
+							"actions": [],
+							"sid": 317159348255595,
+							"children": [
 								{
-									"id": "set-position",
-									"objectClass": "spr_preview_tetromino",
-									"sid": 174469722828726,
-									"parameters": {
-										"x": "32 * floor((spr_player.X + spr_player.Width) / 32)",
-										"y": "32 * round((spr_player.Y  - Self.Height / 2) / 32)"
-									}
-								},
+									"eventType": "block",
+									"conditions": [],
+									"actions": [
+										{
+											"id": "set-position",
+											"objectClass": "spr_preview_tetromino",
+											"sid": 126392029865134,
+											"parameters": {
+												"x": "32 * floor((spr_player.X + spr_player.Width) / 32)",
+												"y": "32 * round((spr_player.Y  - Self.Height / 2) / 32)"
+											}
+										},
+										{
+											"id": "call-function",
+											"objectClass": "Function",
+											"sid": 198501346801291,
+											"parameters": {
+												"name": "\"ePlayer/Gameplay/Recticle.adjust_angle\"",
+												"parameter-n": []
+											}
+										},
+										{
+											"id": "set-angle",
+											"objectClass": "spr_arrow",
+											"sid": 351142050421339,
+											"parameters": {
+												"angle": "0"
+											}
+										},
+										{
+											"id": "set-position",
+											"objectClass": "spr_arrow",
+											"sid": 350010644702171,
+											"parameters": {
+												"x": "spr_player.X + spr_player.Width + spr_preview_tetromino.Width",
+												"y": "spr_player.Y"
+											}
+										}
+									],
+									"sid": 172741487393789
+								}
+							]
+						},
+						{
+							"eventType": "block",
+							"conditions": [
 								{
-									"id": "set-angle",
-									"objectClass": "spr_arrow",
-									"sid": 743117388174425,
+									"id": "on-function",
+									"objectClass": "Function",
+									"sid": 679314561304723,
 									"parameters": {
-										"angle": "0"
-									}
-								},
-								{
-									"id": "set-position",
-									"objectClass": "spr_arrow",
-									"sid": 832297265736997,
-									"parameters": {
-										"x": "spr_player.X + spr_player.Width + spr_preview_tetromino.Width",
-										"y": "spr_player.Y"
+										"name": "\"ePlayer/Gameplay/Recticle.adjust_angle\""
 									}
 								}
 							],
-							"sid": 317159348255595
+							"actions": [],
+							"sid": 393448550394241,
+							"children": [
+								{
+									"eventType": "block",
+									"conditions": [
+										{
+											"id": "is-within-angle",
+											"objectClass": "spr_preview_tetromino",
+											"sid": 981537165546305,
+											"parameters": {
+												"within": "0.5",
+												"angle": "90"
+											}
+										}
+									],
+									"actions": [
+										{
+											"id": "set-position",
+											"objectClass": "spr_preview_tetromino",
+											"sid": 832259749489877,
+											"parameters": {
+												"x": "spr_preview_tetromino.X + spr_preview_tetromino.Height",
+												"y": "spr_preview_tetromino.Y - 32 * floor(spr_preview_tetromino.Width / 64)"
+											}
+										}
+									],
+									"sid": 843265444787446
+								},
+								{
+									"eventType": "block",
+									"conditions": [
+										{
+											"id": "is-within-angle",
+											"objectClass": "spr_preview_tetromino",
+											"sid": 479111094036046,
+											"parameters": {
+												"within": "0.5",
+												"angle": "180"
+											}
+										}
+									],
+									"actions": [
+										{
+											"id": "set-position",
+											"objectClass": "spr_preview_tetromino",
+											"sid": 433412765086337,
+											"parameters": {
+												"x": "spr_preview_tetromino.X + spr_preview_tetromino.Width",
+												"y": "spr_preview_tetromino.Y + spr_preview_tetromino.Height"
+											}
+										}
+									],
+									"sid": 243362113834491
+								},
+								{
+									"eventType": "block",
+									"conditions": [
+										{
+											"id": "is-within-angle",
+											"objectClass": "spr_preview_tetromino",
+											"sid": 853077487461650,
+											"parameters": {
+												"within": "0.5",
+												"angle": "270"
+											}
+										}
+									],
+									"actions": [
+										{
+											"id": "set-position",
+											"objectClass": "spr_preview_tetromino",
+											"sid": 676609028722145,
+											"parameters": {
+												"x": "spr_preview_tetromino.X",
+												"y": "spr_preview_tetromino.Y + 32 * ceil(spr_preview_tetromino.Width / 64)"
+											}
+										}
+									],
+									"sid": 403182553012793
+								}
+							]
 						}
 					],
 					"sid": 495933362204119
