@@ -55,25 +55,17 @@
 			"bundled": false
 		},
 		{
+			"type": "plugin",
+			"id": "Particles",
+			"name": "Particles",
+			"author": "Scirra",
+			"version": "r111",
+			"bundled": false
+		},
+		{
 			"type": "behavior",
 			"id": "solid",
 			"name": "Solid",
-			"author": "Scirra",
-			"version": "r111",
-			"bundled": false
-		},
-		{
-			"type": "behavior",
-			"id": "scrollto",
-			"name": "Scroll To",
-			"author": "Scirra",
-			"version": "r111",
-			"bundled": false
-		},
-		{
-			"type": "behavior",
-			"id": "EightDir",
-			"name": "8 Direction",
 			"author": "Scirra",
 			"version": "r111",
 			"bundled": false
@@ -90,6 +82,22 @@
 			"type": "behavior",
 			"id": "destroy",
 			"name": "Destroy outside layout",
+			"author": "Scirra",
+			"version": "r111",
+			"bundled": false
+		},
+		{
+			"type": "behavior",
+			"id": "scrollto",
+			"name": "Scroll To",
+			"author": "Scirra",
+			"version": "r111",
+			"bundled": false
+		},
+		{
+			"type": "behavior",
+			"id": "EightDir",
+			"name": "8 Direction",
 			"author": "Scirra",
 			"version": "r111",
 			"bundled": false
@@ -128,13 +136,21 @@
 				"items": [
 					"obj_camera",
 					"obj_player",
-					"spr_tetromino",
-					"spr_preview_tetromino",
-					"gui_next_tetromino",
-					"spr_arrow",
-					"spr_player"
+					"spr_player",
+					"part_dust"
 				],
-				"subfolders": [],
+				"subfolders": [
+					{
+						"items": [
+							"gui_next_tetromino",
+							"spr_preview_tetromino",
+							"spr_tetromino",
+							"spr_arrow"
+						],
+						"subfolders": [],
+						"name": "Tetrominoes"
+					}
+				],
 				"name": "Player"
 			},
 			{

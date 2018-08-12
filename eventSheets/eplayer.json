@@ -1310,6 +1310,33 @@
 						}
 					],
 					"sid": 396770478638013
+				},
+				{
+					"eventType": "block",
+					"conditions": [
+						{
+							"id": "event-triggered",
+							"objectClass": "EventTrigger",
+							"sid": 990162617792934,
+							"parameters": {
+								"event-respond-to": "\"shoot\""
+							}
+						}
+					],
+					"actions": [
+						{
+							"id": "shake",
+							"objectClass": "obj_camera",
+							"sid": 137301094888522,
+							"behaviorType": "ScrollTo",
+							"parameters": {
+								"magnitude": "45",
+								"duration": "0.2",
+								"mode": "reducing-magnitude"
+							}
+						}
+					],
+					"sid": 128717827421204
 				}
 			],
 			"sid": 568479796440330
@@ -1339,6 +1366,32 @@
 								"object": "obj_player",
 								"image-point-optional": "0"
 							}
+						},
+						{
+							"id": "set-position-to-another-object",
+							"objectClass": "part_dust",
+							"sid": 734982934129741,
+							"parameters": {
+								"object": "spr_player",
+								"image-point-optional": "\"feet\""
+							}
+						},
+						{
+							"id": "move-to-object",
+							"objectClass": "part_dust",
+							"sid": 206422702035293,
+							"parameters": {
+								"where": "behind",
+								"object": "spr_player"
+							}
+						},
+						{
+							"id": "set-angle",
+							"objectClass": "part_dust",
+							"sid": 525214776393145,
+							"parameters": {
+								"angle": "angle(obj_player.X, obj_player.Y, obj_player.X - obj_player.8Direction.VectorX, obj_player.8Direction.VectorY)"
+							}
 						}
 					],
 					"sid": 273342557604361
@@ -1363,6 +1416,22 @@
 							"parameters": {
 								"animation": "\"run\"",
 								"from": "current-frame"
+							}
+						},
+						{
+							"id": "set-rate",
+							"objectClass": "part_dust",
+							"sid": 110430851715071,
+							"parameters": {
+								"rate": "lerp(0, 30, unlerp(0, obj_player.8Direction.MaxSpeed, obj_player.8Direction.Speed))"
+							}
+						},
+						{
+							"id": "set-size",
+							"objectClass": "part_dust",
+							"sid": 468750112663790,
+							"parameters": {
+								"size": "lerp(8, 16, unlerp(0, obj_player.8Direction.MaxSpeed, obj_player.8Direction.Speed))"
 							}
 						}
 					],
@@ -1453,6 +1522,14 @@
 							"parameters": {
 								"animation": "\"idle\"",
 								"from": "beginning"
+							}
+						},
+						{
+							"id": "set-rate",
+							"objectClass": "part_dust",
+							"sid": 143997329346324,
+							"parameters": {
+								"rate": "0"
 							}
 						}
 					],
