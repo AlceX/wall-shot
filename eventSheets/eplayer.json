@@ -1212,10 +1212,10 @@
 						{
 							"id": "set-position",
 							"objectClass": "obj_camera",
-							"sid": 487597461787102,
+							"sid": 251298648218736,
 							"parameters": {
-								"x": "lerp(Self.X, spr_player.X + spr_player.8Direction.VectorX / 5, 0.5)",
-								"y": "lerp(Self.Y, spr_player.Y + spr_player.8Direction.VectorY / 5, 0.5)"
+								"x": "lerp(spr_player.X, Mouse.X, 0.15)",
+								"y": "lerp(spr_player.Y, Mouse.Y, 0.15)"
 							}
 						}
 					],
