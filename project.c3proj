@@ -127,11 +127,12 @@
 			{
 				"items": [
 					"obj_camera",
-					"spr_player",
+					"obj_player",
 					"spr_tetromino",
 					"spr_preview_tetromino",
 					"gui_next_tetromino",
-					"spr_arrow"
+					"spr_arrow",
+					"spr_player"
 				],
 				"subfolders": [],
 				"name": "Player"

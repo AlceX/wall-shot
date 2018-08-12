@@ -264,7 +264,7 @@
 							"sid": 262372366516821,
 							"behaviorType": "Follow",
 							"parameters": {
-								"angle": "angle(Self.X, Self.Y, spr_player.X, spr_player.Y)"
+								"angle": "angle(Self.X, Self.Y, obj_player.X, obj_player.Y)"
 							}
 						}
 					],
