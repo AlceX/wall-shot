@@ -12,50 +12,16 @@
 					"eventType": "block",
 					"conditions": [
 						{
-							"id": "is-overlapping-another-object",
-							"objectClass": "Enemies",
-							"sid": 860321080592927,
+							"id": "for-each",
+							"objectClass": "System",
+							"sid": 746561668076142,
 							"parameters": {
-								"object": "spr_tetromino"
-							}
-						}
-					],
-					"actions": [
-						{
-							"id": "set-angle-of-motion",
-							"objectClass": "Enemies",
-							"sid": 668982729618937,
-							"behaviorType": "Knockback",
-							"parameters": {
-								"angle": "spr_tetromino.Bullet.AngleOfMotion"
-							}
-						},
-						{
-							"id": "set-speed",
-							"objectClass": "Enemies",
-							"sid": 679950970798202,
-							"behaviorType": "Knockback",
-							"parameters": {
-								"speed": "spr_tetromino.Bullet.Speed"
-							}
-						}
-					],
-					"sid": 459092640018135
-				},
-				{
-					"eventType": "block",
-					"conditions": [
-						{
-							"id": "is-overlapping-another-object",
-							"objectClass": "Enemies",
-							"sid": 894037973915973,
-							"parameters": {
-								"object": "spr_tetromino"
+								"object": "Enemies"
 							}
 						}
 					],
 					"actions": [],
-					"sid": 938005088147472,
+					"sid": 609024431201156,
 					"children": [
 						{
 							"eventType": "block",
@@ -63,178 +29,298 @@
 								{
 									"id": "is-overlapping-another-object",
 									"objectClass": "Enemies",
-									"sid": 506498655347132,
+									"sid": 514519892413529,
 									"parameters": {
-										"object": "tm_collisions"
-									}
-								},
-								{
-									"id": "compare-speed",
-									"objectClass": "spr_tetromino",
-									"sid": 708553011677372,
-									"behaviorType": "Bullet",
-									"parameters": {
-										"comparison": 1,
-										"speed": "0"
+										"object": "spr_tetromino"
 									}
 								}
 							],
 							"actions": [
 								{
-									"id": "destroy",
+									"id": "set-angle-of-motion",
 									"objectClass": "Enemies",
-									"sid": 413185656937459
+									"sid": 413463398941048,
+									"behaviorType": "Knockback",
+									"parameters": {
+										"angle": "spr_tetromino.Bullet.AngleOfMotion"
+									}
+								},
+								{
+									"id": "set-speed",
+									"objectClass": "Enemies",
+									"sid": 664484217408333,
+									"behaviorType": "Knockback",
+									"parameters": {
+										"speed": "spr_tetromino.Bullet.Speed"
+									}
 								}
 							],
-							"sid": 167844149334546
+							"sid": 468204218305467
 						},
 						{
 							"eventType": "block",
 							"conditions": [
 								{
-									"id": "else",
-									"objectClass": "System",
-									"sid": 504011103288381
-								},
-								{
-									"id": "compare-two-values",
-									"objectClass": "System",
-									"sid": 889693776966363,
+									"id": "is-overlapping-another-object",
+									"objectClass": "Enemies",
+									"sid": 483207725176175,
 									"parameters": {
-										"first-value": "spr_tetromino.PickedCount",
-										"comparison": 0,
-										"second-value": "2"
+										"object": "spr_tetromino"
 									}
 								}
 							],
 							"actions": [],
-							"sid": 834845813986643,
+							"sid": 716388877128410,
 							"children": [
 								{
-									"eventType": "comment",
-									"text": "I'm not sure if there's a more elegant way to check that one is moving and the other isn't..."
-								},
-								{
-									"eventType": "variable",
-									"name": "one_is_moving",
-									"type": "boolean",
-									"initialValue": "false",
-									"comment": "",
-									"isStatic": false,
-									"isConstant": false,
-									"sid": 167579266636965
-								},
-								{
-									"eventType": "variable",
-									"name": "one_is_still",
-									"type": "boolean",
-									"initialValue": "false",
-									"comment": "",
-									"isStatic": false,
-									"isConstant": false,
-									"sid": 900780893135913
-								},
-								{
 									"eventType": "block",
 									"conditions": [
 										{
-											"id": "for-each",
-											"objectClass": "System",
-											"sid": 885180827408447,
+											"id": "is-overlapping-another-object",
+											"objectClass": "Enemies",
+											"sid": 379187689383969,
 											"parameters": {
-												"object": "spr_tetromino"
-											}
-										}
-									],
-									"actions": [],
-									"sid": 234036214164894,
-									"children": [
-										{
-											"eventType": "block",
-											"conditions": [
-												{
-													"id": "compare-speed",
-													"objectClass": "spr_tetromino",
-													"sid": 409576357595795,
-													"behaviorType": "Bullet",
-													"parameters": {
-														"comparison": 0,
-														"speed": "0"
-													}
-												}
-											],
-											"actions": [
-												{
-													"id": "set-boolean-eventvar",
-													"objectClass": "System",
-													"sid": 852882381150503,
-													"parameters": {
-														"variable": "one_is_still",
-														"value": "true"
-													}
-												}
-											],
-											"sid": 197109685287160
-										},
-										{
-											"eventType": "block",
-											"conditions": [
-												{
-													"id": "compare-speed",
-													"objectClass": "spr_tetromino",
-													"sid": 383298133362715,
-													"behaviorType": "Bullet",
-													"parameters": {
-														"comparison": 1,
-														"speed": "0"
-													}
-												}
-											],
-											"actions": [
-												{
-													"id": "set-boolean-eventvar",
-													"objectClass": "System",
-													"sid": 314953872834158,
-													"parameters": {
-														"variable": "one_is_moving",
-														"value": "true"
-													}
-												}
-											],
-											"sid": 410643951031023
-										}
-									]
-								},
-								{
-									"eventType": "block",
-									"conditions": [
-										{
-											"id": "compare-boolean-eventvar",
-											"objectClass": "System",
-											"sid": 726660598216906,
-											"parameters": {
-												"variable": "one_is_moving"
+												"object": "tm_collisions"
 											}
 										},
 										{
-											"id": "compare-boolean-eventvar",
-											"objectClass": "System",
-											"sid": 104771756969544,
+											"id": "compare-speed",
+											"objectClass": "spr_tetromino",
+											"sid": 805208090379237,
+											"behaviorType": "Bullet",
 											"parameters": {
-												"variable": "one_is_still"
+												"comparison": 1,
+												"speed": "0"
 											}
 										}
 									],
 									"actions": [
 										{
-											"id": "destroy",
-											"objectClass": "Enemies",
-											"sid": 223856984498602
+											"id": "call-function",
+											"objectClass": "Function",
+											"sid": 199139784471176,
+											"parameters": {
+												"name": "\"eEnemies/General.kill_enemy\"",
+												"parameter-n": [
+													"Enemies.UID"
+												]
+											}
 										}
 									],
-									"sid": 960300518018418
+									"sid": 668072838665586
+								},
+								{
+									"eventType": "block",
+									"conditions": [
+										{
+											"id": "else",
+											"objectClass": "System",
+											"sid": 405432900831576
+										},
+										{
+											"id": "compare-two-values",
+											"objectClass": "System",
+											"sid": 212256558189922,
+											"parameters": {
+												"first-value": "spr_tetromino.PickedCount",
+												"comparison": 0,
+												"second-value": "2"
+											}
+										}
+									],
+									"actions": [],
+									"sid": 417490738550522,
+									"children": [
+										{
+											"eventType": "comment",
+											"text": "I'm not sure if there's a more elegant way to check that one is moving and the other isn't..."
+										},
+										{
+											"eventType": "variable",
+											"name": "one_is_moving",
+											"type": "boolean",
+											"initialValue": "false",
+											"comment": "",
+											"isStatic": false,
+											"isConstant": false,
+											"sid": 538382533798036
+										},
+										{
+											"eventType": "variable",
+											"name": "one_is_still",
+											"type": "boolean",
+											"initialValue": "false",
+											"comment": "",
+											"isStatic": false,
+											"isConstant": false,
+											"sid": 149601644799070
+										},
+										{
+											"eventType": "block",
+											"conditions": [
+												{
+													"id": "for-each",
+													"objectClass": "System",
+													"sid": 114642753442707,
+													"parameters": {
+														"object": "spr_tetromino"
+													}
+												}
+											],
+											"actions": [],
+											"sid": 163602108658837,
+											"children": [
+												{
+													"eventType": "block",
+													"conditions": [
+														{
+															"id": "compare-speed",
+															"objectClass": "spr_tetromino",
+															"sid": 866207721104668,
+															"behaviorType": "Bullet",
+															"parameters": {
+																"comparison": 0,
+																"speed": "0"
+															}
+														}
+													],
+													"actions": [
+														{
+															"id": "set-boolean-eventvar",
+															"objectClass": "System",
+															"sid": 786740086148058,
+															"parameters": {
+																"variable": "one_is_still",
+																"value": "true"
+															}
+														}
+													],
+													"sid": 528273379357112
+												},
+												{
+													"eventType": "block",
+													"conditions": [
+														{
+															"id": "compare-speed",
+															"objectClass": "spr_tetromino",
+															"sid": 776630947955575,
+															"behaviorType": "Bullet",
+															"parameters": {
+																"comparison": 1,
+																"speed": "0"
+															}
+														}
+													],
+													"actions": [
+														{
+															"id": "set-boolean-eventvar",
+															"objectClass": "System",
+															"sid": 617893648893178,
+															"parameters": {
+																"variable": "one_is_moving",
+																"value": "true"
+															}
+														}
+													],
+													"sid": 777105661076130
+												}
+											]
+										},
+										{
+											"eventType": "block",
+											"conditions": [
+												{
+													"id": "compare-boolean-eventvar",
+													"objectClass": "System",
+													"sid": 446687869429876,
+													"parameters": {
+														"variable": "one_is_moving"
+													}
+												},
+												{
+													"id": "compare-boolean-eventvar",
+													"objectClass": "System",
+													"sid": 213225737363847,
+													"parameters": {
+														"variable": "one_is_still"
+													}
+												}
+											],
+											"actions": [
+												{
+													"id": "call-function",
+													"objectClass": "Function",
+													"sid": 513153758109773,
+													"parameters": {
+														"name": "\"eEnemies/General.kill_enemy\"",
+														"parameter-n": [
+															"Enemies.UID"
+														]
+													}
+												}
+											],
+											"sid": 919509759415076
+										}
+									]
 								}
 							]
+						}
+					]
+				},
+				{
+					"eventType": "block",
+					"conditions": [
+						{
+							"id": "on-function",
+							"objectClass": "Function",
+							"sid": 604418482790902,
+							"parameters": {
+								"name": "\"eEnemies/General.kill_enemy\""
+							}
+						}
+					],
+					"actions": [],
+					"sid": 614631854960757,
+					"children": [
+						{
+							"eventType": "block",
+							"conditions": [
+								{
+									"id": "pick-by-unique-id",
+									"objectClass": "Enemies",
+									"sid": 235943005503742,
+									"parameters": {
+										"unique-id": "Function.Param(0)"
+									}
+								}
+							],
+							"actions": [
+								{
+									"id": "add-to-eventvar",
+									"objectClass": "System",
+									"sid": 289370122563557,
+									"parameters": {
+										"variable": "Score",
+										"value": "1"
+									}
+								},
+								{
+									"id": "spawn-another-object",
+									"objectClass": "Enemies",
+									"sid": 302761853496969,
+									"parameters": {
+										"object": "part_enemy_death",
+										"layer": "\"objects\"",
+										"image-point": "0"
+									}
+								},
+								{
+									"id": "destroy",
+									"objectClass": "Enemies",
+									"sid": 854425382551813
+								}
+							],
+							"sid": 344414271185104
 						}
 					]
 				}
@@ -274,36 +360,135 @@
 					"eventType": "block",
 					"conditions": [
 						{
+							"id": "for-each",
+							"objectClass": "System",
+							"sid": 842037610912302,
+							"parameters": {
+								"object": "spr_simple_enemy"
+							}
+						}
+					],
+					"actions": [],
+					"sid": 305847520927172,
+					"children": [
+						{
+							"eventType": "block",
+							"conditions": [
+								{
+									"id": "compare-two-values",
+									"objectClass": "System",
+									"sid": 442707608389622,
+									"parameters": {
+										"first-value": "obj_player.X",
+										"comparison": 3,
+										"second-value": "spr_simple_enemy.X"
+									}
+								}
+							],
+							"actions": [
+								{
+									"id": "set-mirrored",
+									"objectClass": "spr_simple_enemy",
+									"sid": 161710201483774,
+									"parameters": {
+										"state": "mirrored"
+									}
+								}
+							],
+							"sid": 358584013354055
+						},
+						{
+							"eventType": "block",
+							"conditions": [
+								{
+									"id": "else",
+									"objectClass": "System",
+									"sid": 996862148627538
+								}
+							],
+							"actions": [
+								{
+									"id": "set-mirrored",
+									"objectClass": "spr_simple_enemy",
+									"sid": 189283152739374,
+									"parameters": {
+										"state": "not-mirrored"
+									}
+								}
+							],
+							"sid": 994410687145502
+						}
+					]
+				},
+				{
+					"eventType": "block",
+					"conditions": [
+						{
 							"id": "is-overlapping-another-object",
 							"objectClass": "spr_simple_enemy",
 							"sid": 904729752565750,
 							"parameters": {
 								"object": "spr_tetromino"
 							}
-						},
-						{
-							"id": "compare-speed",
-							"objectClass": "spr_tetromino",
-							"sid": 811584222255434,
-							"behaviorType": "Bullet",
-							"parameters": {
-								"comparison": 1,
-								"speed": "0"
-							}
 						}
 					],
-					"actions": [
+					"actions": [],
+					"sid": 831723061481061,
+					"children": [
 						{
-							"id": "set-speed",
-							"objectClass": "spr_simple_enemy",
-							"sid": 774844481339490,
-							"behaviorType": "Follow",
-							"parameters": {
-								"speed": "0"
-							}
+							"eventType": "block",
+							"conditions": [
+								{
+									"id": "compare-speed",
+									"objectClass": "spr_tetromino",
+									"sid": 670827662806518,
+									"behaviorType": "Bullet",
+									"parameters": {
+										"comparison": 1,
+										"speed": "0"
+									}
+								}
+							],
+							"actions": [
+								{
+									"id": "set-speed",
+									"objectClass": "spr_simple_enemy",
+									"sid": 905909103665644,
+									"behaviorType": "Follow",
+									"parameters": {
+										"speed": "0"
+									}
+								},
+								{
+									"id": "set-opacity",
+									"objectClass": "spr_simple_enemy",
+									"sid": 550743960135911,
+									"parameters": {
+										"opacity": "100"
+									}
+								},
+								{
+									"id": "set-active",
+									"objectClass": "spr_simple_enemy",
+									"sid": 216625471369369,
+									"behaviorType": "Sine",
+									"parameters": {
+										"state": "inactive"
+									}
+								},
+								{
+									"id": "set-animation",
+									"objectClass": "spr_simple_enemy",
+									"sid": 930458377019162,
+									"parameters": {
+										"animation": "\"hit\"",
+										"from": "current-frame"
+									}
+								}
+							],
+							"sid": 459962958704153
 						}
-					],
-					"sid": 831723061481061
+					]
 				},
 				{
 					"eventType": "block",
@@ -322,6 +507,32 @@
 							"behaviorType": "Follow",
 							"parameters": {
 								"speed": "50"
+							}
+						},
+						{
+							"id": "set-opacity",
+							"objectClass": "spr_simple_enemy",
+							"sid": 738606575275211,
+							"parameters": {
+								"opacity": "75"
+							}
+						},
+						{
+							"id": "set-active",
+							"objectClass": "spr_simple_enemy",
+							"sid": 484101507795057,
+							"behaviorType": "Sine",
+							"parameters": {
+								"state": "active"
+							}
+						},
+						{
+							"id": "set-animation",
+							"objectClass": "spr_simple_enemy",
+							"sid": 873177982129977,
+							"parameters": {
+								"animation": "\"idle\"",
+								"from": "current-frame"
 							}
 						}
 					],

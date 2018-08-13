@@ -10,6 +10,16 @@
 			"includeSheet": "eEnemies"
 		},
 		{
+			"eventType": "variable",
+			"name": "Score",
+			"type": "number",
+			"initialValue": "0",
+			"comment": "",
+			"isStatic": false,
+			"isConstant": false,
+			"sid": 997678667807913
+		},
+		{
 			"eventType": "block",
 			"conditions": [
 				{
@@ -28,7 +38,63 @@
 					}
 				}
 			],
-			"sid": 272358451291571
+			"sid": 272358451291571,
+			"children": [
+				{
+					"eventType": "block",
+					"conditions": [
+						{
+							"id": "for-each",
+							"objectClass": "System",
+							"sid": 926845224127134,
+							"parameters": {
+								"object": "obj_enemy_spawner"
+							}
+						}
+					],
+					"actions": [
+						{
+							"id": "start-timer",
+							"objectClass": "obj_enemy_spawner",
+							"sid": 997323768717347,
+							"behaviorType": "Timer",
+							"parameters": {
+								"duration": "random(5, 10)",
+								"type": "regular",
+								"tag": "\"spawn\""
+							}
+						}
+					],
+					"sid": 473977734763451
+				}
+			]
+		},
+		{
+			"eventType": "block",
+			"conditions": [
+				{
+					"id": "on-timer",
+					"objectClass": "obj_enemy_spawner",
+					"sid": 752063232531788,
+					"behaviorType": "Timer",
+					"parameters": {
+						"tag": "\"spawn\""
+					}
+				}
+			],
+			"actions": [
+				{
+					"id": "spawn-another-object",
+					"objectClass": "obj_enemy_spawner",
+					"sid": 118321375321992,
+					"parameters": {
+						"object": "spr_simple_enemy",
+						"layer": "\"objects\"",
+						"image-point": "0"
+					}
+				}
+			],
+			"sid": 984805989471769
 		}
 	],
 	"sid": 113748176136503

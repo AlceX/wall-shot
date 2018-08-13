@@ -1,0 +1,19 @@
+{
+	"name": "part_enemy_death",
+	"plugin-id": "Particles",
+	"sid": 192855473952906,
+	"isGlobal": false,
+	"instanceVariables": [],
+	"behaviorTypes": [],
+	"effectTypes": [],
+	"image": {
+		"width": 16,
+		"height": 16,
+		"originX": 0.8478260869565217,
+		"originY": 0.9130434782608695,
+		"originalSource": "",
+		"exportFormat": "png",
+		"exportQuality": 0.8,
+		"imageSpriteId": 43
+	}
+}

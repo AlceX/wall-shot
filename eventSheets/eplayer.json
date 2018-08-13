@@ -1163,6 +1163,17 @@
 												"animation": "choose(\"I\", \"L\", \"O\", \"S\", \"T\")",
 												"from": "beginning"
 											}
+										},
+										{
+											"id": "shake",
+											"objectClass": "obj_camera",
+											"sid": 427556349699602,
+											"behaviorType": "ScrollTo",
+											"parameters": {
+												"magnitude": "45",
+												"duration": "0.2",
+												"mode": "reducing-magnitude"
+											}
 										}
 									],
 									"sid": 340976321959208
@@ -1196,6 +1207,33 @@
 						}
 					],
 					"sid": 465741184688661
+				},
+				{
+					"eventType": "block",
+					"conditions": [
+						{
+							"id": "compare-speed",
+							"objectClass": "spr_tetromino",
+							"sid": 301705738152280,
+							"behaviorType": "Bullet",
+							"parameters": {
+								"comparison": 2,
+								"speed": "200"
+							}
+						}
+					],
+					"actions": [
+						{
+							"id": "set-acceleration",
+							"objectClass": "spr_tetromino",
+							"sid": 840948962566416,
+							"behaviorType": "Bullet",
+							"parameters": {
+								"acceleration": "0"
+							}
+						}
+					],
+					"sid": 594037886534860
 				},
 				{
 					"eventType": "block",
@@ -1235,10 +1273,66 @@
 							"parameters": {
 								"speed": "0"
 							}
+						},
+						{
+							"id": "shake",
+							"objectClass": "obj_camera",
+							"sid": 301091041122492,
+							"behaviorType": "ScrollTo",
+							"parameters": {
+								"magnitude": "25",
+								"duration": "0.2",
+								"mode": "reducing-magnitude"
+							}
 						}
 					],
 					"sid": 770916151249777,
 					"isOrBlock": true
+				},
+				{
+					"eventType": "block",
+					"conditions": [
+						{
+							"id": "on-collision-with-another-object",
+							"objectClass": "Enemies",
+							"sid": 290886217953274,
+							"parameters": {
+								"object": "obj_player"
+							}
+						}
+					],
+					"actions": [
+						{
+							"id": "go-to-layout",
+							"objectClass": "System",
+							"sid": 385418892110409,
+							"parameters": {
+								"layout": "GameOver"
+							}
+						}
+					],
+					"sid": 269255013107924
+				},
+				{
+					"eventType": "block",
+					"conditions": [
+						{
+							"id": "every-tick",
+							"objectClass": "System",
+							"sid": 208386039173353
+						}
+					],
+					"actions": [
+						{
+							"id": "set-text",
+							"objectClass": "sf_text",
+							"sid": 633212694644325,
+							"parameters": {
+								"text": "\"Score: \" & Score"
+							}
+						}
+					],
+					"sid": 363341762611588
 				}
 			],
 			"sid": 431708990504645
@@ -1310,33 +1404,6 @@
 						}
 					],
 					"sid": 396770478638013
-				},
-				{
-					"eventType": "block",
-					"conditions": [
-						{
-							"id": "event-triggered",
-							"objectClass": "EventTrigger",
-							"sid": 990162617792934,
-							"parameters": {
-								"event-respond-to": "\"shoot\""
-							}
-						}
-					],
-					"actions": [
-						{
-							"id": "shake",
-							"objectClass": "obj_camera",
-							"sid": 137301094888522,
-							"behaviorType": "ScrollTo",
-							"parameters": {
-								"magnitude": "45",
-								"duration": "0.2",
-								"mode": "reducing-magnitude"
-							}
-						}
-					],
-					"sid": 128717827421204
 				}
 			],
 			"sid": 568479796440330
@@ -1449,12 +1516,6 @@
 										"comparison": 0,
 										"second-value": "\"left\""
 									}
-								},
-								{
-									"id": "is-mirrored",
-									"objectClass": "spr_player",
-									"sid": 344300124282515,
-									"isInverted": true
 								}
 							],
 							"actions": [
@@ -1481,11 +1542,6 @@
 										"comparison": 0,
 										"second-value": "\"right\""
 									}
-								},
-								{
-									"id": "is-mirrored",
-									"objectClass": "spr_player",
-									"sid": 695851419436159
 								}
 							],
 							"actions": [

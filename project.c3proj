@@ -1,7 +1,7 @@
 {
 	"projectFormatVersion": 1,
 	"savedWithRelease": 11100,
-	"name": "Wall Shot",
+	"name": "Tetromino Ghost Smasher",
 	"runtime": "c2",
 	"useWorker": false,
 	"bundleAddons": false,
@@ -63,6 +63,14 @@
 			"bundled": false
 		},
 		{
+			"type": "plugin",
+			"id": "Spritefont2",
+			"name": "Sprite font",
+			"author": "Scirra",
+			"version": "r111",
+			"bundled": false
+		},
+		{
 			"type": "behavior",
 			"id": "solid",
 			"name": "Solid",
@@ -103,6 +111,22 @@
 			"bundled": false
 		},
 		{
+			"type": "behavior",
+			"id": "Sin",
+			"name": "Sine",
+			"author": "Scirra",
+			"version": "r111",
+			"bundled": false
+		},
+		{
+			"type": "behavior",
+			"id": "Timer",
+			"name": "Timer",
+			"author": "Scirra",
+			"version": "r111",
+			"bundled": false
+		},
+		{
 			"type": "effect",
 			"id": "replacecolor",
 			"name": "Replace color",
@@ -113,7 +137,9 @@
 	],
 	"uniqueId": "n9d856u12yp",
 	"objectTypes": {
-		"items": [],
+		"items": [
+			"sf_text"
+		],
 		"subfolders": [
 			{
 				"items": [
@@ -127,7 +153,8 @@
 			},
 			{
 				"items": [
-					"tm_collisions"
+					"tm_collisions",
+					"tm_bg"
 				],
 				"subfolders": [],
 				"name": "Background"
@@ -155,7 +182,9 @@
 			},
 			{
 				"items": [
-					"spr_simple_enemy"
+					"spr_simple_enemy",
+					"part_enemy_death",
+					"obj_enemy_spawner"
 				],
 				"subfolders": [],
 				"name": "Enemies"
@@ -172,7 +201,8 @@
 	},
 	"layouts": {
 		"items": [
-			"Level"
+			"Level",
+			"GameOver"
 		],
 		"subfolders": []
 	},
@@ -184,7 +214,8 @@
 		"subfolders": [
 			{
 				"items": [
-					"elLevel"
+					"elLevel",
+					"elGameOver"
 				],
 				"subfolders": [],
 				"name": "Layouts"

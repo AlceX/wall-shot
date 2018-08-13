@@ -1,0 +1,77 @@
+{
+	"name": "elGameOver",
+	"events": [
+		{
+			"eventType": "block",
+			"conditions": [
+				{
+					"id": "on-start-of-layout",
+					"objectClass": "System",
+					"sid": 554576006192323
+				}
+			],
+			"actions": [],
+			"sid": 419671541284354,
+			"children": [
+				{
+					"eventType": "block",
+					"conditions": [
+						{
+							"id": "pick-by-unique-id",
+							"objectClass": "sf_text",
+							"sid": 907280596727914,
+							"parameters": {
+								"unique-id": "22"
+							}
+						}
+					],
+					"actions": [
+						{
+							"id": "append-text",
+							"objectClass": "sf_text",
+							"sid": 530642956420878,
+							"parameters": {
+								"text": "\" \" & Score"
+							}
+						}
+					],
+					"sid": 490711708266181
+				}
+			]
+		},
+		{
+			"eventType": "block",
+			"conditions": [
+				{
+					"id": "on-key-pressed",
+					"objectClass": "Keyboard",
+					"sid": 970635185604873,
+					"parameters": {
+						"key": 32
+					}
+				}
+			],
+			"actions": [
+				{
+					"id": "set-eventvar-value",
+					"objectClass": "System",
+					"sid": 552549846109207,
+					"parameters": {
+						"variable": "Score",
+						"value": "0"
+					}
+				},
+				{
+					"id": "go-to-layout",
+					"objectClass": "System",
+					"sid": 371997176326951,
+					"parameters": {
+						"layout": "Level"
+					}
+				}
+			],
+			"sid": 746798537495656
+		}
+	],
+	"sid": 798185738702528
+}
